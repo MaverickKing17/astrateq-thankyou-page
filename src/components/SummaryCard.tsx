@@ -3,12 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
-  Copy, Check, Edit2, ShieldAlert, BadgeInfo, Save, Sliders, ChevronDown, RefreshCw 
+  Copy, Check, Edit2, ShieldAlert, BadgeInfo, Save, Sliders, ChevronDown, RefreshCw, Camera
 } from 'lucide-react';
 import { ReservationDetails } from '../types';
+import QrScanner from './QrScanner';
 
 interface SummaryCardProps {
   details: ReservationDetails;
@@ -19,7 +20,10 @@ interface SummaryCardProps {
 export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: SummaryCardProps) {
   const [copiedId, setCopiedId] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
+  const [showScanner, setShowScanner] = useState(false);
   const [showRegionTooltip, setShowRegionTooltip] = useState(false);
+  const [showSuccessCheck, setShowSuccessCheck] = useState(false);
+  const successTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Form local state
   const [emailInput, setEmailInput] = useState(details.email);
@@ -27,6 +31,20 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
   const [makeInput, setMakeInput] = useState(details.vehicleMake);
   const [modelInput, setModelInput] = useState(details.vehicleModel);
   const [resIdInput, setResIdInput] = useState(details.reservationId);
+
+  const triggerSuccessAnimation = () => {
+    if (successTimeoutRef.current) {
+      clearTimeout(successTimeoutRef.current);
+    }
+    // Briefly reset to false to restart the draw animation if triggered repeatedly
+    setShowSuccessCheck(false);
+    setTimeout(() => {
+      setShowSuccessCheck(true);
+      successTimeoutRef.current = setTimeout(() => {
+        setShowSuccessCheck(false);
+      }, 4000);
+    }, 50);
+  };
 
   const handleCopyId = () => {
     navigator.clipboard.writeText(details.reservationId);
@@ -45,10 +63,36 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
       reservationId: resIdInput
     });
     setIsEditing(false);
+    triggerSuccessAnimation();
     onLogEvent('reservation_confirmed_view', { 
       action: 'update_reservation_details',
       vehicle: `${yearInput} ${makeInput} ${modelInput}`,
       email: emailInput
+    });
+  };
+
+  const handleScanSuccess = (data: { id: string; email?: string; year?: string; make?: string; model?: string }) => {
+    setResIdInput(data.id);
+    if (data.email) setEmailInput(data.email);
+    if (data.year) setYearInput(data.year);
+    if (data.make) setMakeInput(data.make);
+    if (data.model) setModelInput(data.model);
+
+    onUpdateDetails({
+      reservationId: data.id,
+      ...(data.email && { email: data.email }),
+      ...(data.year && { vehicleYear: data.year }),
+      ...(data.make && { vehicleMake: data.make }),
+      ...(data.model && { vehicleModel: data.model }),
+    });
+
+    setShowScanner(false);
+    triggerSuccessAnimation();
+
+    onLogEvent('reservation_confirmed_view', {
+      action: 'qr_scanner_success',
+      scannedId: data.id,
+      scannedEmail: data.email || details.email
     });
   };
 
@@ -89,6 +133,8 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
       reservationId: choice.id
     });
 
+    triggerSuccessAnimation();
+
     onLogEvent('reservation_confirmed_view', {
       action: 'applied_preset',
       presetType: preset,
@@ -119,9 +165,38 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
           </div>
 
           <div className="flex items-center space-x-2">
+            {!showScanner ? (
+              <button
+                onClick={() => {
+                  setShowScanner(true);
+                  setIsEditing(false);
+                  onLogEvent('reservation_confirmed_view', { action: 'open_qr_scanner' });
+                }}
+                className="flex items-center space-x-1.5 text-xs text-white hover:text-astrateq-cyan font-medium transition-all bg-white/5 hover:bg-white/10 border border-white/5 px-3.5 py-1.5 rounded-lg group"
+                id="btn-scan-qr"
+              >
+                <Camera className="w-3.5 h-3.5 group-hover:scale-105 transition-all text-astrateq-cyan" />
+                <span>Scan QR Code</span>
+              </button>
+            ) : (
+              <button
+                onClick={() => {
+                  setShowScanner(false);
+                  onLogEvent('reservation_confirmed_view', { action: 'close_qr_scanner' });
+                }}
+                className="text-xs text-red-400 hover:text-red-300 transition-all border border-red-500/10 hover:border-red-500/20 bg-red-950/20 px-3.5 py-1.5 rounded-lg"
+                id="btn-cancel-scan"
+              >
+                Close Scanner
+              </button>
+            )}
+
             {!isEditing ? (
               <button
-                onClick={() => setIsEditing(true)}
+                onClick={() => {
+                  setIsEditing(true);
+                  setShowScanner(false);
+                }}
                 className="flex items-center space-x-1.5 text-xs text-white hover:text-white font-medium transition-all bg-white/5 hover:bg-white/10 border border-white/5 px-3.5 py-1.5 rounded-lg group"
                 id="btn-edit-reservation"
               >
@@ -130,7 +205,10 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
               </button>
             ) : (
               <button
-                onClick={() => setIsEditing(false)}
+                onClick={() => {
+                  setIsEditing(false);
+                  setShowScanner(false);
+                }}
                 className="text-xs text-red-400 hover:text-red-300 transition-all border border-red-500/10 hover:border-red-500/20 bg-red-950/20 px-3.5 py-1.5 rounded-lg"
                 id="btn-cancel-edit"
               >
@@ -139,6 +217,72 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
             )}
           </div>
         </div>
+
+        {/* Success Validation Notification Banner with Animated Check-mark */}
+        <AnimatePresence>
+          {showSuccessCheck && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, height: 0 }}
+              animate={{ opacity: 1, scale: 1, height: 'auto' }}
+              exit={{ opacity: 0, scale: 0.95, height: 0 }}
+              transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+              className="bg-emerald-500/10 border border-emerald-500/30 p-4 rounded-xl flex items-center justify-between overflow-hidden shadow-[0_0_20px_rgba(16,185,129,0.15)]"
+            >
+              <div className="flex items-center space-x-3.5">
+                <div className="w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 shadow-[0_0_12px_rgba(16,185,129,0.25)]">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-4 h-4 text-emerald-400"
+                  >
+                    <motion.polyline
+                      points="20 6 9 17 4 12"
+                      initial={{ pathLength: 0 }}
+                      animate={{ pathLength: 1 }}
+                      transition={{ duration: 0.5, ease: "easeInOut", delay: 0.15 }}
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+                    Reservation Details Synced
+                  </h4>
+                  <p className="text-[11px] text-white/90 font-medium font-sans mt-0.5 leading-normal">
+                    Your early access priority queue assignment was successfully validated & updated on-device.
+                  </p>
+                </div>
+              </div>
+              <div className="flex-shrink-0 pl-3">
+                <span className="text-[9px] font-mono tracking-widest text-emerald-400 font-extrabold uppercase bg-emerald-950/60 px-2.5 py-1 rounded border border-emerald-500/20 shadow-[0_0_10px_rgba(16,185,129,0.15)]">
+                  Active Security
+                </span>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Optical QR Scanner Panel */}
+        <AnimatePresence mode="wait">
+          {showScanner && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.25 }}
+              className="overflow-hidden mb-4"
+            >
+              <QrScanner 
+                onScanSuccess={handleScanSuccess} 
+                onClose={() => setShowScanner(false)} 
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Editing Panel (AnimatePresence) */}
         <AnimatePresence mode="wait">

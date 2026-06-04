@@ -26,6 +26,19 @@ body {
 }
 
 /* Custom glow effects matching Apple / Tesla Preorder luxury */
+@keyframes scan-laser {
+  0%, 100% {
+    top: 8%;
+  }
+  50% {
+    top: 92%;
+  }
+}
+
+.animate-laser {
+  animation: scan-laser 2.5s ease-in-out infinite;
+}
+
 .hover-cyan-glow:hover {
   box-shadow: 0 0 20px rgba(34, 211, 238, 0.25);
 }
