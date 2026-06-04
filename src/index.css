@@ -2,9 +2,9 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-display: 'Space Grotesk', sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  --font-sans: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Segoe UI Semibold', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Consolas', 'Cascadia Code', 'Fira Code', 'Courier New', ui-monospace, SFMono-Regular, monospace;
 
   --color-astrateq-cyan: #22d3ee;
   --color-astrateq-blue: #2563eb;
