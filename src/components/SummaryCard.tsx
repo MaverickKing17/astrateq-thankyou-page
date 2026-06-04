@@ -98,7 +98,8 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
 
   return (
     <section className="py-6 px-4 md:px-8 max-w-7xl mx-auto w-full" id="reservation-summary">
-      <div className="rounded-2xl border border-white/5 bg-astrateq-card p-6 lg:p-8 space-y-6 relative overflow-hidden">
+      <div className="rounded-2xl bg-gradient-to-r from-astrateq-cyan/35 via-astrateq-blue/25 to-emerald-500/30 p-[1.5px] shadow-[0_0_30px_rgba(34,211,238,0.12)] hover:shadow-[0_0_40px_rgba(34,211,238,0.22)] transition-all duration-500">
+        <div className="rounded-[15px] bg-astrateq-card p-6 lg:p-8 space-y-6 relative overflow-hidden">
         
         {/* Visual Ambient Grid background */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.02),transparent)] pointer-events-none"></div>
@@ -367,6 +368,7 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
         </div>
 
       </div>
-    </section>
+    </div>
+  </section>
   );
 }

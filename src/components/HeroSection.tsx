@@ -48,7 +48,7 @@ export default function HeroSection({ onLogEvent }: HeroProps) {
         <motion.div 
           whileHover={{ scale: 1.01 }}
           transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-          className="flex items-start space-x-4 bg-emerald-500/5 border border-emerald-500/10 p-5 rounded-2xl shadow-[0_0_20px_rgba(16,185,129,0.02)] card-blur"
+          className="flex items-start space-x-4 bg-emerald-950/20 border border-emerald-500/30 p-5 rounded-2xl shadow-[0_0_20px_rgba(16,185,129,0.15)] card-blur hover:border-emerald-400/50 hover:shadow-[0_0_25px_rgba(16,185,129,0.25)] transition-all duration-300"
         >
           <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 flex-shrink-0">
             <CheckCircle2 className="w-6 h-6 text-emerald-400 stroke-[2]" />
@@ -71,7 +71,7 @@ export default function HeroSection({ onLogEvent }: HeroProps) {
         transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
         className="lg:col-span-6"
       >
-        <div className="relative group rounded-3xl bg-gradient-to-b from-white/10 to-transparent p-[1px] shadow-[0_0_50px_rgba(34,211,238,0.03)] overflow-hidden transition-all duration-500 hover:shadow-[0_0_60px_rgba(34,211,238,0.08)]">
+        <div className="relative group rounded-3xl bg-gradient-to-r from-astrateq-cyan/40 via-astrateq-blue/40 to-emerald-400/30 p-[1.5px] shadow-[0_0_35px_rgba(34,211,238,0.15)] overflow-hidden transition-all duration-500 hover:shadow-[0_0_45px_rgba(34,211,238,0.25)] hover:from-astrateq-cyan hover:via-astrateq-blue hover:to-emerald-400">
           {/* Cyan Glow Lines */}
           <div className="absolute top-0 right-1/4 w-32 h-[1px] bg-gradient-to-r from-transparent via-astrateq-cyan to-transparent"></div>
           <div className="absolute bottom-0 left-1/4 w-32 h-[1px] bg-gradient-to-r from-transparent via-astrateq-cyan/40 to-transparent"></div>

@@ -169,56 +169,58 @@ export default function TimelineSection({ onLogEvent }: TimelineProps) {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.3 }}
-            className="h-full rounded-2xl border border-white/5 bg-astrateq-card p-6 flex flex-col justify-between space-y-6 relative overflow-hidden"
+            className="h-full rounded-2xl bg-gradient-to-r from-astrateq-cyan/35 via-astrateq-blue/25 to-emerald-500/30 p-[1.5px] shadow-[0_0_25px_rgba(34,211,238,0.12)] hover:shadow-[0_0_35px_rgba(34,211,238,0.22)] transition-all duration-500"
           >
-            {/* Design detail accents */}
-            <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-astrateq-cyan/5 via-transparent to-transparent pointer-events-none"></div>
+            <div className="h-full rounded-[15px] bg-astrateq-card p-6 flex flex-col justify-between space-y-6 relative overflow-hidden">
+              {/* Design detail accents */}
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-astrateq-cyan/5 via-transparent to-transparent pointer-events-none"></div>
 
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <span className="text-[9px] font-mono tracking-widest text-[#2563eb] font-bold uppercase p-1.5 bg-white/5 border border-white/5 rounded">
-                  Phase 0{currentStepData.id} Info
-                </span>
-                <span className="text-xs text-slate-500 font-mono">
-                  Milestone validation
-                </span>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-2">
+                  <span className="text-[9px] font-mono tracking-widest text-[#2563eb] font-bold uppercase p-1.5 bg-white/5 border border-white/5 rounded">
+                    Phase 0{currentStepData.id} Info
+                  </span>
+                  <span className="text-xs text-slate-500 font-mono">
+                    Milestone validation
+                  </span>
+                </div>
+
+                <h2 className="text-lg font-bold font-display text-white">
+                  Detailed Outlook — {currentStepData.label}
+                </h2>
+
+                <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                  {currentStepData.detailedText}
+                </p>
+
+                <div className="border-t border-white/5 pt-4 space-y-2">
+                  <span className="text-[10px] font-mono uppercase text-slate-500 font-bold block">
+                    Actionable Task Indicators
+                  </span>
+                  
+                  <div className="flex items-center space-x-2.5 text-xs text-slate-300">
+                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-400"></div>
+                    <span>Canadian Driver Compatibility Matching</span>
+                  </div>
+                  <div className="flex items-center space-x-2.5 text-xs text-slate-300">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#38bdf8]"></div>
+                    <span>OBD-II Telemetry Calibration Drafts</span>
+                  </div>
+                  <div className="flex items-center space-x-2.5 text-xs text-slate-300">
+                    <div className="w-1.5 h-1.5 rounded-full bg-slate-700"></div>
+                    <span>Physical Hardware Balance Allocator</span>
+                  </div>
+                </div>
               </div>
 
-              <h2 className="text-lg font-bold font-display text-white">
-                Detailed Outlook — {currentStepData.label}
-              </h2>
-
-              <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                {currentStepData.detailedText}
-              </p>
-
-              <div className="border-t border-white/5 pt-4 space-y-2">
-                <span className="text-[10px] font-mono uppercase text-slate-500 font-bold block">
-                  Actionable Task Indicators
-                </span>
-                
-                <div className="flex items-center space-x-2.5 text-xs text-slate-300">
-                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-400"></div>
-                  <span>Canadian Driver Compatibility Matching</span>
-                </div>
-                <div className="flex items-center space-x-2.5 text-xs text-slate-300">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#38bdf8]"></div>
-                  <span>OBD-II Telemetry Calibration Drafts</span>
-                </div>
-                <div className="flex items-center space-x-2.5 text-xs text-slate-300">
-                  <div className="w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                  <span>Physical Hardware Balance Allocator</span>
+              <div className="bg-white/5 border border-white/5 p-4 rounded-xl flex items-start space-x-2.5 mt-auto">
+                <ShieldCheck className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
+                <div className="text-[10px] text-slate-400 leading-normal font-sans">
+                  No automatic billing will occur. Your reservation is merely a priority queuing placeholder, and hardware conversion is 100% voluntary.
                 </div>
               </div>
+
             </div>
-
-            <div className="bg-white/5 border border-white/5 p-4 rounded-xl flex items-start space-x-2.5 mt-auto">
-              <ShieldCheck className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
-              <div className="text-[10px] text-slate-400 leading-normal font-sans">
-                No automatic billing will occur. Your reservation is merely a priority queuing placeholder, and hardware conversion is 100% voluntary.
-              </div>
-            </div>
-
           </motion.div>
         </AnimatePresence>
       </div>

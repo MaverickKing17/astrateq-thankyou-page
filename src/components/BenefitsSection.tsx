@@ -92,39 +92,41 @@ export default function BenefitsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.05 }}
-            whileHover={{ y: -4, borderColor: 'rgba(34, 211, 238, 0.25)' }}
-            className="rounded-xl border border-white/5 bg-astrateq-card p-5 flex flex-col justify-between space-y-4 hover:shadow-[0_0_20px_rgba(34,211,238,0.02)] transition-all h-full"
+            whileHover={{ y: -4 }}
+            className="rounded-xl bg-gradient-to-br from-astrateq-cyan/35 via-astrateq-blue/25 to-emerald-500/15 p-[1px] shadow-[0_0_15px_rgba(34,211,238,0.06)] hover:shadow-[0_0_25px_rgba(34,211,238,0.22)] hover:from-astrateq-cyan hover:via-astrateq-blue hover:to-emerald-500 transition-all duration-300 h-full"
             id={`benefit-${benefit.id}`}
           >
-            <div className="space-y-3">
-              {/* Icon & Badge row */}
-              <div className="flex items-center justify-between">
-                <div className="w-9 h-9 rounded-lg bg-astrateq-cyan/10 flex items-center justify-center border border-astrateq-cyan/15">
-                  {renderIcon(benefit.iconName)}
+            <div className="bg-astrateq-card rounded-[11px] p-5 flex flex-col justify-between space-y-4 h-full">
+              <div className="space-y-3">
+                {/* Icon & Badge row */}
+                <div className="flex items-center justify-between">
+                  <div className="w-9 h-9 rounded-lg bg-astrateq-cyan/10 flex items-center justify-center border border-astrateq-cyan/15">
+                    {renderIcon(benefit.iconName)}
+                  </div>
+                  {benefit.badge && (
+                    <span className="text-[8px] font-mono px-2 py-0.5 rounded-full bg-slate-900 border border-slate-800 text-slate-300 font-bold uppercase tracking-wider">
+                      {benefit.badge}
+                    </span>
+                  )}
                 </div>
-                {benefit.badge && (
-                  <span className="text-[8px] font-mono px-2 py-0.5 rounded-full bg-slate-900 border border-slate-800 text-slate-300 font-bold uppercase tracking-wider">
-                    {benefit.badge}
-                  </span>
-                )}
+
+                {/* Title and Description */}
+                <h3 className="text-sm font-semibold font-display text-white tracking-wide">
+                  {benefit.title}
+                </h3>
+
+                <p className="text-[11px] text-slate-400 leading-relaxed font-sans">
+                  {benefit.description}
+                </p>
               </div>
 
-              {/* Title and Description */}
-              <h3 className="text-sm font-semibold font-display text-white tracking-wide">
-                {benefit.title}
-              </h3>
-
-              <p className="text-[11px] text-slate-400 leading-relaxed font-sans">
-                {benefit.description}
-              </p>
-            </div>
-
-            <div className="border-t border-white/5 pt-3 flex items-center justify-between">
-              <span className="text-[9px] font-mono text-slate-600 uppercase tracking-widest">
-                BENEFIT SECURED
-              </span>
-              <div className="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 text-emerald-400">
-                <Check className="w-3 h-3 stroke-[3]" />
+              <div className="border-t border-white/5 pt-3 flex items-center justify-between">
+                <span className="text-[9px] font-mono text-slate-600 uppercase tracking-widest">
+                  BENEFIT SECURED
+                </span>
+                <div className="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 text-emerald-400">
+                  <Check className="w-3 h-3 stroke-[3]" />
+                </div>
               </div>
             </div>
           </motion.div>

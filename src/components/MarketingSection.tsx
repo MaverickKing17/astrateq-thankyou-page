@@ -77,9 +77,10 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="lg:col-span-4 rounded-2xl border border-white/5 bg-astrateq-card p-6 lg:p-7 flex flex-col justify-between space-y-6"
+        className="lg:col-span-4 rounded-2xl bg-gradient-to-br from-astrateq-cyan/35 via-astrateq-blue/25 to-pink-500/15 p-[1px] shadow-[0_0_20px_rgba(34,211,238,0.06)] hover:shadow-[0_0_30px_rgba(236,72,153,0.18)] transition-all duration-300"
         id="col-social-share"
       >
+        <div className="rounded-[15px] bg-astrateq-card p-6 lg:p-7 flex flex-col justify-between space-y-6 h-full">
         <div className="space-y-4">
           <div className="flex items-center space-x-2">
             <Sparkles className="w-4 h-4 text-astrateq-cyan animate-pulse" />
@@ -148,7 +149,8 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
             </button>
           </div>
         </div>
-      </motion.div>
+      </div>
+    </motion.div>
 
       {/* 2. Interactive Email Check Column */}
       <motion.div 
@@ -156,9 +158,10 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
-        className="lg:col-span-4 rounded-2xl border border-white/5 bg-astrateq-card p-6 lg:p-7 flex flex-col justify-between space-y-6"
+        className="lg:col-span-4 rounded-2xl bg-gradient-to-br from-astrateq-cyan/35 via-astrateq-blue/25 to-indigo-500/15 p-[1px] shadow-[0_0_20px_rgba(34,211,238,0.06)] hover:shadow-[0_0_30px_rgba(99,102,241,0.18)] transition-all duration-300"
         id="col-email-reminder"
       >
+        <div className="rounded-[15px] bg-astrateq-card p-6 lg:p-7 flex flex-col justify-between space-y-6 h-full">
         <div className="space-y-4 flex-1 flex flex-col">
           <div className="flex items-center space-x-2">
             <Mail className="w-4 h-4 text-astrateq-cyan" />
@@ -245,7 +248,8 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
             <span>{emailSending ? 'Resending...' : 'Resend Confirmation Email'}</span>
           </button>
         </div>
-      </motion.div>
+      </div>
+    </motion.div>
 
       {/* 3. Final Checkout CTA Column */}
       <motion.div 
@@ -253,11 +257,12 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.2 }}
-        className="lg:col-span-4 rounded-2xl border border-astrateq-cyan/20 bg-astrateq-card p-6 lg:p-7 flex flex-col justify-between space-y-6 shadow-[0_0_40px_rgba(34,211,238,0.03)] relative"
+        className="lg:col-span-4 rounded-2xl bg-gradient-to-r from-astrateq-cyan/35 via-emerald-500/25 to-astrateq-blue/35 p-[1.5px] shadow-[0_0_30px_rgba(16,185,129,0.12)] hover:shadow-[0_0_40px_rgba(16,185,129,0.22)] transition-all duration-300 relative"
         id="col-final-ctas"
       >
         {/* Cyan premium border overlay top */}
-        <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-astrateq-cyan/60 to-transparent"></div>
+        <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-astrateq-cyan/60 to-transparent z-10"></div>
+        <div className="rounded-[15px] bg-astrateq-card p-6 lg:p-7 flex flex-col justify-between space-y-6 h-full relative overflow-hidden">
 
         <div className="space-y-4">
           <div className="flex items-center space-x-2">
@@ -320,8 +325,8 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
             <ArrowRight className="w-3.5 h-3.5 text-slate-500 group-hover:rotate-45 transition-transform" />
           </button>
         </div>
-
-      </motion.div>
-    </section>
+      </div>
+    </motion.div>
+  </section>
   );
 }
