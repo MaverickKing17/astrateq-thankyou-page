@@ -84,7 +84,7 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
         <div className="space-y-4">
           <div className="flex items-center space-x-2">
             <Sparkles className="w-4 h-4 text-astrateq-cyan animate-pulse" />
-            <span className="text-[10px] uppercase font-mono tracking-wider text-slate-500 font-bold">
+            <span className="text-[10px] uppercase font-mono tracking-wider text-slate-200 font-bold">
               SHARE THE MOVEMENT
             </span>
           </div>
@@ -93,7 +93,7 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
             Help Shape the Future of Vehicle Intelligence
           </h3>
 
-          <p className="text-[11px] text-slate-400 leading-normal">
+          <p className="text-[11.5px] text-white leading-normal font-medium">
             Know someone who cares about privacy, vehicle safety, or smarter driving? Share Astrateq Gadgets with them to support Canadian compute.
           </p>
 
@@ -134,15 +134,15 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
 
           {/* Copy-Paste Quote Card */}
           <div className="bg-white/5 border border-white/5 p-4 rounded-xl space-y-2 text-left relative overflow-hidden">
-            <span className="text-[8.5px] font-mono uppercase text-slate-500 font-bold block">
+            <span className="text-[8.5px] font-mono uppercase text-slate-200 font-bold block">
               Suggested Copy
             </span>
-            <blockquote className="text-[10px] text-slate-300 italic font-medium leading-relaxed font-sans select-all pr-2">
+            <blockquote className="text-[10.5px] text-white italic font-semibold leading-relaxed font-sans select-all pr-2">
               "{shareText}"
             </blockquote>
             <button 
               onClick={handleCopyQuote}
-              className="flex items-center justify-center w-full space-x-1.5 mt-2.5 text-[9px] font-mono uppercase font-bold text-slate-400 hover:text-white border border-dashed border-white/10 hover:border-white/25 bg-black/40 px-2.5 py-1.5 rounded-md transition-all"
+              className="flex items-center justify-center w-full space-x-1.5 mt-2.5 text-[9px] font-mono uppercase font-bold text-white hover:text-white border border-dashed border-white/15 hover:border-white/30 bg-black/40 px-2.5 py-1.5 rounded-md transition-all"
             >
               {copiedQuote ? <Check className="w-3. h-3 text-emerald-400" /> : <Link2 className="w-3 h-3" />}
               <span>{copiedQuote ? 'Copied Content' : 'Copy suggested copy'}</span>
@@ -165,7 +165,7 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
         <div className="space-y-4 flex-1 flex flex-col">
           <div className="flex items-center space-x-2">
             <Mail className="w-4 h-4 text-astrateq-cyan" />
-            <span className="text-[10px] uppercase font-mono tracking-wider text-slate-500 font-bold">
+            <span className="text-[10px] uppercase font-mono tracking-wider text-slate-200 font-bold">
               EMAIL DISPATCH
             </span>
           </div>
@@ -174,8 +174,8 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
             Check Your Inbox
           </h3>
 
-          <p className="text-[11px] text-slate-400 leading-normal mb-2">
-            We’ve sent a confirmation email with your reservation details and next steps to <span className="text-white font-mono">{customerEmail}</span>. If you don't see it, check Promotions or Spam and mark Astrateq as safe.
+          <p className="text-[11.5px] text-white leading-normal mb-2 font-medium">
+            We’ve sent a confirmation email with your reservation details and next steps to <span className="text-white font-mono font-bold">{customerEmail}</span>. If you don't see it, check Promotions or Spam and mark Astrateq as safe.
           </p>
 
           {/* Envelope Graphic Animation Widget */}
@@ -205,13 +205,13 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
                   className="flex flex-col items-center space-y-1.5 text-center group"
                 >
                   <div className="relative">
-                    <Mail className="w-12 h-12 text-slate-700 group-hover:text-astrateq-cyan transition-colors" />
+                    <Mail className="w-12 h-12 text-slate-400 group-hover:text-astrateq-cyan transition-colors" />
                     <Send className="w-4 h-4 text-astrateq-cyan absolute -bottom-1 -right-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
-                  <span className="text-[9px] font-mono uppercase text-slate-500 group-hover:text-slate-300 transition-colors">
+                  <span className="text-[9.5px] font-mono uppercase text-white group-hover:text-white font-semibold transition-colors">
                     Click to Resend Email
                   </span>
-                  <span className="text-[8px] font-mono text-slate-600">
+                  <span className="text-[8.5px] font-mono text-slate-300 font-medium">
                     Dispatched count: {emailSentCount}
                   </span>
                 </motion.div>
@@ -276,7 +276,7 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
             You're In. We'll Take It From Here.
           </h3>
 
-          <p className="text-[11px] text-slate-400 leading-normal">
+          <p className="text-[11.5px] text-white leading-normal font-medium">
             We're building the future of vehicle intelligence with local privacy, hardware-accelerated security, and true transparency at the core.
           </p>
         </div>
@@ -292,7 +292,7 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
             className="w-full bg-white hover:bg-slate-100 text-slate-950 font-bold text-xs py-3 px-4 rounded-xl flex items-center justify-between shadow-xl transition-all sm:text-xs group"
             id="btn-cta-return"
           >
-            <span className="flex items-center space-x-1.5">
+            <span className="flex items-center space-x-1.5 font-bold">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
               <span>Return to AstrateqGadgets.com</span>
             </span>
@@ -302,11 +302,11 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
           {/* Social Follow */}
           <button 
             onClick={() => handleFollowClick('X')}
-            className="w-full flex items-center justify-between border border-white/5 bg-white/5 hover:bg-white/10 text-xs font-semibold py-3 px-4 rounded-xl text-slate-300 hover:text-white transition-all group"
+            className="w-full flex items-center justify-between border border-white/5 bg-white/5 hover:bg-white/10 text-xs font-bold py-3 px-4 rounded-xl text-white hover:text-white transition-all group"
             id="btn-cta-follow"
           >
             <span>Follow Astrateq Gadgets</span>
-            <ExternalLink className="w-3.5 h-3.5 text-slate-500 group-hover:text-slate-300 transition-colors" />
+            <ExternalLink className="w-3.5 h-3.5 text-white group-hover:text-white transition-colors" />
           </button>
 
           {/* Review Compatibility Details */}
@@ -318,11 +318,11 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
                 onLogEvent('reservation_confirmed_view', { action: 'scroll_to_compatibility' });
               }
             }}
-            className="w-full flex items-center justify-between border border-white/5 bg-white/5 hover:bg-white/10 text-xs font-semibold py-3 px-4 rounded-xl text-slate-300 hover:text-white transition-all group"
+            className="w-full flex items-center justify-between border border-white/5 bg-white/5 hover:bg-white/10 text-xs font-bold py-3 px-4 rounded-xl text-white hover:text-white transition-all group"
             id="btn-cta-review"
           >
             <span>Review Compatibility Details</span>
-            <ArrowRight className="w-3.5 h-3.5 text-slate-500 group-hover:rotate-45 transition-transform" />
+            <ArrowRight className="w-3.5 h-3.5 text-white group-hover:rotate-45 transition-transform" />
           </button>
         </div>
       </div>

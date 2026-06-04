@@ -109,7 +109,7 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
           <div className="flex items-center space-x-3">
             <Sliders className="w-5 h-5 text-astrateq-cyan" />
             <div>
-              <span className="text-[10px] uppercase tracking-widest font-mono text-slate-500 font-bold block">
+              <span className="text-[10px] uppercase tracking-widest font-mono text-slate-200 font-bold block">
                 YOUR STATUS DETAILS
               </span>
               <h2 className="text-lg sm:text-xl font-bold font-display text-white">
@@ -122,7 +122,7 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
             {!isEditing ? (
               <button
                 onClick={() => setIsEditing(true)}
-                className="flex items-center space-x-1.5 text-xs text-slate-400 hover:text-white transition-all bg-white/5 hover:bg-white/10 border border-white/5 px-3.5 py-1.5 rounded-lg group"
+                className="flex items-center space-x-1.5 text-xs text-white hover:text-white font-medium transition-all bg-white/5 hover:bg-white/10 border border-white/5 px-3.5 py-1.5 rounded-lg group"
                 id="btn-edit-reservation"
               >
                 <Edit2 className="w-3.5 h-3.5 group-hover:scale-105 transition-all text-astrateq-cyan" />
@@ -152,26 +152,26 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
               id="reservation-edit-form"
             >
               <div className="md:col-span-12 flex flex-wrap gap-2 items-center justify-between pb-2 border-b border-white/5">
-                <span className="text-xs font-mono text-slate-400">Quick Sandbox Presets:</span>
+                <span className="text-xs font-mono text-white font-semibold">Quick Sandbox Presets:</span>
                 <div className="flex gap-2">
                   <button 
                     type="button"
                     onClick={() => handleResetToPreset('tesla')}
-                    className="text-[10px] bg-white/5 border border-white/5 text-slate-300 hover:text-white px-2.5 py-1 rounded hover:border-astrateq-cyan/30 transition-all"
+                    className="text-[10px] bg-white/5 border border-white/5 text-white hover:text-astrateq-cyan px-2.5 py-1 rounded hover:border-astrateq-cyan/30 transition-all font-medium"
                   >
                     Tesla Model Y
                   </button>
                   <button 
                     type="button"
                     onClick={() => handleResetToPreset('toyota')}
-                    className="text-[10px] bg-white/5 border border-white/5 text-slate-300 hover:text-white px-2.5 py-1 rounded hover:border-astrateq-cyan/30 transition-all"
+                    className="text-[10px] bg-white/5 border border-white/5 text-white hover:text-astrateq-cyan px-2.5 py-1 rounded hover:border-astrateq-cyan/30 transition-all font-medium"
                   >
                     Toyota RAV4 Prime
                   </button>
                   <button 
                     type="button"
                     onClick={() => handleResetToPreset('ford')}
-                    className="text-[10px] bg-white/5 border border-white/5 text-slate-300 hover:text-white px-2.5 py-1 rounded hover:border-astrateq-cyan/30 transition-all"
+                    className="text-[10px] bg-white/5 border border-white/5 text-white hover:text-astrateq-cyan px-2.5 py-1 rounded hover:border-astrateq-cyan/30 transition-all font-medium"
                   >
                     F-150 Lightning
                   </button>
@@ -179,7 +179,7 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
               </div>
 
               <div className="col-span-12 md:col-span-3">
-                <label className="block text-[10px] uppercase font-mono tracking-wider text-slate-500 mb-1.5 font-bold">Reservation ID</label>
+                <label className="block text-[10px] uppercase font-mono tracking-wider text-slate-100 mb-1.5 font-bold">Reservation ID</label>
                 <input 
                   type="text" 
                   value={resIdInput}
@@ -191,7 +191,7 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
               </div>
 
               <div className="col-span-12 md:col-span-3">
-                <label className="block text-[10px] uppercase font-mono tracking-wider text-slate-500 mb-1.5 font-bold">Customer Email</label>
+                <label className="block text-[10px] uppercase font-mono tracking-wider text-slate-100 mb-1.5 font-bold">Customer Email</label>
                 <input 
                   type="email" 
                   value={emailInput}
@@ -203,7 +203,7 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
               </div>
 
               <div className="col-span-12 md:col-span-2">
-                <label className="block text-[10px] uppercase font-mono tracking-wider text-slate-500 mb-1.5 font-bold">Vehicle Year</label>
+                <label className="block text-[10px] uppercase font-mono tracking-wider text-slate-100 mb-1.5 font-bold">Vehicle Year</label>
                 <input 
                   type="text" 
                   value={yearInput}
@@ -215,7 +215,7 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
               </div>
 
               <div className="col-span-12 md:col-span-2">
-                <label className="block text-[10px] uppercase font-mono tracking-wider text-slate-500 mb-1.5 font-bold">Vehicle Make</label>
+                <label className="block text-[10px] uppercase font-mono tracking-wider text-slate-100 mb-1.5 font-bold">Vehicle Make</label>
                 <input 
                   type="text" 
                   value={makeInput}
@@ -227,7 +227,7 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
               </div>
 
               <div className="col-span-12 md:col-span-2">
-                <label className="block text-[10px] uppercase font-mono tracking-wider text-slate-500 mb-1.5 font-bold">Vehicle Model</label>
+                <label className="block text-[10px] uppercase font-mono tracking-wider text-slate-100 mb-1.5 font-bold">Vehicle Model</label>
                 <input 
                   type="text" 
                   value={modelInput}
@@ -242,7 +242,7 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
                 <button
                   type="button"
                   onClick={() => setIsEditing(false)}
-                  className="text-xs text-slate-400 hover:text-slate-300 font-medium px-4 py-2"
+                  className="text-xs text-white hover:text-slate-100 font-bold px-4 py-2"
                 >
                   Cancel
                 </button>
@@ -264,7 +264,7 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
           
           {/* Reservation ID */}
           <div className="sm:col-span-6 md:col-span-3 border-r border-white/5 pr-2 lg:pr-4 group flex flex-col justify-between h-full min-h-[50px]">
-            <span className="text-[10px] uppercase font-mono tracking-wider text-slate-500 font-bold block mb-1">
+            <span className="text-[10px] uppercase font-mono tracking-wider text-slate-200 font-bold block mb-1">
               Reservation ID
             </span>
             <div className="flex items-center space-x-2 mt-auto">
@@ -273,7 +273,7 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
               </span>
               <button 
                 onClick={handleCopyId}
-                className="p-1.5 rounded-md hover:bg-slate-900 border border-transparent hover:border-white/5 text-slate-400 hover:text-astrateq-cyan transition-all"
+                className="p-1.5 rounded-md hover:bg-slate-900 border border-transparent hover:border-white/5 text-white hover:text-astrateq-cyan transition-all"
                 title="Copy Reservation ID"
               >
                 {copiedId ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
@@ -283,20 +283,20 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
 
           {/* Customer Email */}
           <div className="sm:col-span-6 md:col-span-3 border-r border-white/5 pr-2 lg:pr-4 flex flex-col justify-between h-full min-h-[50px]">
-            <span className="text-[10px] uppercase font-mono tracking-wider text-slate-500 font-bold block mb-1">
+            <span className="text-[10px] uppercase font-mono tracking-wider text-slate-200 font-bold block mb-1">
               Email Address
             </span>
-            <span className="text-slate-300 text-xs lg:text-sm font-medium font-sans truncate mt-auto">
+            <span className="text-white text-xs lg:text-sm font-semibold font-sans truncate mt-auto">
               {details.email}
             </span>
           </div>
 
           {/* Vehicle */}
           <div className="sm:col-span-6 md:col-span-3 border-r border-white/5 pr-2 lg:pr-4 flex flex-col justify-between h-full min-h-[50px]">
-            <span className="text-[10px] uppercase font-mono tracking-wider text-slate-500 font-bold block mb-1">
+            <span className="text-[10px] uppercase font-mono tracking-wider text-slate-200 font-bold block mb-1">
               Vehicle Configured
             </span>
-            <span className="text-slate-200 text-xs lg:text-sm font-bold font-sans mt-auto leading-none truncate">
+            <span className="text-white text-xs lg:text-sm font-bold font-sans mt-auto leading-none truncate">
               {details.vehicleYear} {details.vehicleMake} {details.vehicleModel}
             </span>
           </div>
@@ -304,19 +304,19 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
           {/* Region */}
           <div className="sm:col-span-6 md:col-span-2 border-r border-white/5 pr-2 lg:pr-4 relative flex flex-col justify-between h-full min-h-[50px]">
             <div className="flex items-center space-x-1 mb-1">
-              <span className="text-[10px] uppercase font-mono tracking-wider text-slate-500 font-bold">
+              <span className="text-[10px] uppercase font-mono tracking-wider text-slate-200 font-bold">
                 Canada Region
               </span>
               <button 
                 onMouseEnter={() => setShowRegionTooltip(true)}
                 onMouseLeave={() => setShowRegionTooltip(false)}
-                className="text-slate-600 hover:text-slate-400 font-mono"
+                className="text-white hover:text-slate-200 font-mono"
               >
                 <BadgeInfo className="w-3 h-3" />
               </button>
             </div>
             <div className="flex items-center space-x-1.5 mt-auto">
-              <span className="text-slate-200 text-xs lg:text-sm font-semibold font-mono">
+              <span className="text-white text-xs lg:text-sm font-bold font-mono">
                 {details.region}
               </span>
               <span className="text-xs" role="img" aria-label="Canadian Flag">🇨🇦</span>
@@ -329,7 +329,7 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
-                  className="absolute bottom-12 left-0 w-52 bg-slate-950 border border-white/5 p-3 rounded-lg shadow-xl text-[10px] text-slate-300 font-sans leading-relaxed z-40 card-blur"
+                  className="absolute bottom-12 left-0 w-52 bg-slate-950 border border-white/5 p-3 rounded-lg shadow-xl text-[10px] text-white font-sans leading-relaxed z-40 card-blur font-medium"
                 >
                   Authorized Canadian Deployment. Built fully to withstand winter temperature cycles (-40°C).
                 </motion.div>
@@ -339,20 +339,20 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
 
           {/* Release Batch */}
           <div className="sm:col-span-6 md:col-span-2 border-r border-white/5 pr-2 flex flex-col justify-between h-full min-h-[50px]">
-            <span className="text-[10px] uppercase font-mono tracking-wider text-slate-500 font-bold block mb-1">
+            <span className="text-[10px] uppercase font-mono tracking-wider text-slate-200 font-bold block mb-1">
               Production Batch
             </span>
-            <span className="text-astrateq-cyan text-xs lg:text-sm font-bold font-mono uppercase mt-auto">
+            <span className="text-astrateq-cyan text-xs lg:text-sm font-extrabold font-mono uppercase mt-auto">
               {details.batch}
             </span>
           </div>
 
           {/* Deposit Security */}
           <div className="sm:col-span-6 md:col-span-1 flex flex-col justify-between h-full min-h-[50px]">
-            <span className="text-[10px] uppercase font-mono tracking-wider text-slate-500 font-bold block mb-1">
+            <span className="text-[10px] uppercase font-mono tracking-wider text-slate-200 font-bold block mb-1">
               Deposit Risk
             </span>
-            <span className="text-emerald-400 text-xs lg:text-sm font-mono font-bold mt-auto whitespace-nowrap">
+            <span className="text-emerald-400 text-xs lg:text-sm font-mono font-extrabold mt-auto whitespace-nowrap">
               {details.deposit}
             </span>
           </div>
@@ -362,8 +362,8 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
         {/* Global Security / Integrity Note */}
         <div className="bg-white/5 border border-white/5 p-4 rounded-xl flex items-start space-x-3 mt-4">
           <ShieldAlert className="w-4 h-4 text-astrateq-cyan flex-shrink-0 mt-0.5" />
-          <div className="text-[11px] text-slate-400 leading-relaxed font-sans">
-            <span className="text-white font-semibold">Zero Cloud Architecture Mandate:</span> All dashcam feeds, diagnostic signals, and cabin parameters generated by the <span className="text-astrateq-cyan font-semibold">Astrateq Edge Sentinel Bundle</span> are calculated instantly inside the on-board computer. No logs are ever shipped to servers. Total privacy securement.
+          <div className="text-[11.5px] text-white leading-relaxed font-sans">
+            <span className="text-white font-bold">Zero Cloud Architecture Mandate:</span> All dashcam feeds, diagnostic signals, and cabin parameters generated by the <span className="text-astrateq-cyan font-bold">Astrateq Edge Sentinel Bundle</span> are calculated instantly inside the on-board computer. No logs are ever shipped to servers. Total privacy securement.
           </div>
         </div>
 

@@ -133,7 +133,7 @@ export default function App() {
         {/* 7. Important Transparency notice banner before footer */}
         <div className="max-w-7xl mx-auto w-full px-4 md:px-8 py-3">
           <div className="rounded-xl border border-dashed border-white/5 bg-white/5 p-4 text-center">
-            <span className="text-[11px] text-slate-500 font-mono tracking-wide leading-relaxed">
+            <span className="text-[11.5px] text-white font-mono tracking-wide leading-relaxed font-semibold">
               🇨🇦 Astrateq Gadgets is currently in pre-launch validation. Your reservation helps us measure demand, prioritize compatible vehicles, and prepare for supplier and production planning. Done under Canadian pre-release compliance guidelines.
             </span>
           </div>

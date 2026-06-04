@@ -40,7 +40,7 @@ export default function HeroSection({ onLogEvent }: HeroProps) {
           Is Secured.
         </h1>
         
-        <p className="text-sm text-slate-400 font-sans max-w-[360px] leading-relaxed">
+        <p className="text-sm text-white font-sans max-w-[360px] leading-relaxed">
           Thank you for joining the first Astrateq Gadgets early access release. Your position has been recorded, and we'll keep you updated as we move toward product release.
         </p>
 
@@ -57,7 +57,7 @@ export default function HeroSection({ onLogEvent }: HeroProps) {
             <h3 className="text-xs font-bold tracking-widest text-emerald-400 uppercase font-display">
               Reservation Confirmed
             </h3>
-            <p className="text-xs text-emerald-200/60 mt-1 leading-relaxed">
+            <p className="text-xs text-emerald-100 mt-1 leading-relaxed">
               You are officially on the priority access list. Your Hardware Balance Credit is ready.
             </p>
           </div>
@@ -81,13 +81,13 @@ export default function HeroSection({ onLogEvent }: HeroProps) {
             {/* Card Header Info */}
             <div className="flex items-center justify-between border-b border-white/5 pb-4">
               <div>
-                <span className="text-[10px] uppercase tracking-wider font-mono text-slate-500 font-semibold">
+                <span className="text-[10px] uppercase tracking-wider font-mono text-slate-200 font-semibold">
                   ASTRATEQ
                 </span>
                 <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-white font-display">
                   Edge Sentinel
                 </h2>
-                <span className="text-xs text-astrateq-cyan/80 font-semibold block mt-0.5 font-mono">
+                <span className="text-xs text-white font-semibold block mt-0.5 font-mono">
                   OBD-II + Dual Cam Bundle
                 </span>
               </div>
@@ -112,7 +112,7 @@ export default function HeroSection({ onLogEvent }: HeroProps) {
               
               {/* Tech Spec overlay */}
               <div className="absolute bottom-3 left-3 right-3 flex justify-between items-center bg-black/60 backdrop-blur-md border border-white/5 py-2 px-3.5 rounded-xl">
-                <span className="text-[10px] font-mono tracking-wider text-slate-400 flex items-center">
+                <span className="text-[10px] font-mono tracking-wider text-white flex items-center">
                   <span className="w-1.5 h-1.5 rounded-full bg-astrateq-cyan mr-1.5 animate-pulse"></span>
                   Ready for Validation
                 </span>
@@ -129,7 +129,7 @@ export default function HeroSection({ onLogEvent }: HeroProps) {
                 <span className="text-[9px] font-mono font-bold text-white uppercase tracking-wider">
                   100% Local
                 </span>
-                <span className="text-[8px] text-slate-500 font-mono text-center">
+                <span className="text-[8px] text-white font-mono text-center">
                   Zero Cloud Records
                 </span>
               </div>
@@ -139,7 +139,7 @@ export default function HeroSection({ onLogEvent }: HeroProps) {
                 <span className="text-[9px] font-mono font-bold text-white uppercase tracking-wider">
                   Edge Compute
                 </span>
-                <span className="text-[8px] text-slate-500 font-mono text-center">
+                <span className="text-[8px] text-white font-mono text-center">
                   Real-Time AI Processing
                 </span>
               </div>
@@ -149,7 +149,7 @@ export default function HeroSection({ onLogEvent }: HeroProps) {
                 <span className="text-[9px] font-mono font-bold text-white uppercase tracking-wider">
                   Privacy-First
                 </span>
-                <span className="text-[8px] text-slate-500 font-mono text-center">
+                <span className="text-[8px] text-white font-mono text-center">
                   Built In Canada 🇨🇦
                 </span>
               </div>

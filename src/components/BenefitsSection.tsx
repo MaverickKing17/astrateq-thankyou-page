@@ -78,7 +78,7 @@ export default function BenefitsSection() {
         <h2 className="text-xl sm:text-2xl font-bold font-display text-white mt-0.5">
           Your Early Access Benefits
         </h2>
-        <p className="text-xs text-slate-400 max-w-md mt-1">
+        <p className="text-xs text-white max-w-md mt-1 font-semibold">
           Each priority position receives the following credentials, discount thresholds, and private support keys.
         </p>
       </div>
@@ -115,13 +115,13 @@ export default function BenefitsSection() {
                   {benefit.title}
                 </h3>
 
-                <p className="text-[11px] text-slate-400 leading-relaxed font-sans">
+                <p className="text-[11.5px] text-white leading-relaxed font-sans font-medium">
                   {benefit.description}
                 </p>
               </div>
 
               <div className="border-t border-white/5 pt-3 flex items-center justify-between">
-                <span className="text-[9px] font-mono text-slate-600 uppercase tracking-widest">
+                <span className="text-[9px] font-mono text-slate-200 font-bold uppercase tracking-widest">
                   BENEFIT SECURED
                 </span>
                 <div className="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 text-emerald-400">

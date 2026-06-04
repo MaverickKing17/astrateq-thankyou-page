@@ -13,17 +13,15 @@ export default function Footer() {
         
         {/* Branding & description block */}
         <div className="space-y-2 max-w-sm">
-          <div className="flex items-center space-x-2">
-            <svg 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              className="w-4 h-4 text-astrateq-cyan stroke-[2.5]"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5z" />
-              <path d="M2 17l10 5 10-5" />
-              <path d="M2 12l10 5 10-5" />
-            </svg>
+          <div className="flex items-center space-x-2.5">
+            <div className="w-8 h-8 rounded-lg overflow-hidden border border-white/10 bg-black/20 shadow-[0_0_10px_rgba(34,211,238,0.15)] flex-shrink-0">
+              <img 
+                src="https://i.ibb.co/4g7ffGv4/Gemini-Generated-Image-pta8i9pta8i9pta8.png" 
+                alt="Astrateq Logo" 
+                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover"
+              />
+            </div>
             <span className="font-bold tracking-wider font-display uppercase text-white hover:text-white transition-all text-sm">
               ASTRATEQ <span className="text-astrateq-cyan">GADGETS</span>
             </span>

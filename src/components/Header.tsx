@@ -39,7 +39,7 @@ export default function Header({ onLogEvent }: HeaderProps) {
           <span className="text-lg font-bold tracking-tight font-display text-white uppercase sm:text-lg">
             ASTRATEQ <span className="text-astrateq-cyan">GADGETS</span>
           </span>
-          <span className="text-[9px] font-mono tracking-[0.15em] text-slate-500 uppercase font-semibold leading-none mt-0.5">
+          <span className="text-[9px] font-mono tracking-[0.15em] text-white uppercase font-bold leading-none mt-0.5">
             Drive Safer. Drive Smarter.
           </span>
         </div>
@@ -56,7 +56,7 @@ export default function Header({ onLogEvent }: HeaderProps) {
 
         <button 
           onClick={handleBackHome}
-          className="text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:text-white transition-opacity flex items-center space-x-1.5 focus:outline-none"
+          className="text-[10px] font-bold uppercase tracking-widest text-white hover:text-astrateq-cyan transition-colors flex items-center space-x-1.5 focus:outline-none"
           id="btn-back-home"
         >
           <ArrowLeft className="w-3 h-3 text-astrateq-cyan" />

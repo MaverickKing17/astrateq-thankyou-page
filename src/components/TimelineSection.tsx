@@ -86,7 +86,7 @@ export default function TimelineSection({ onLogEvent }: TimelineProps) {
           <h2 className="text-xl sm:text-2xl font-bold font-display text-white mt-0.5">
             What Happens Next Timeline
           </h2>
-          <p className="text-xs text-slate-400 max-w-md mt-1 leading-relaxed">
+          <p className="text-xs text-white max-w-md mt-1 leading-relaxed font-medium">
             Click on any phase to review advanced technical parameters and milestone securement tasks.
           </p>
         </div>
@@ -124,7 +124,7 @@ export default function TimelineSection({ onLogEvent }: TimelineProps) {
                     {getStepIcon(step.id, step.status)}
                   </div>
                   {/* Small step digit */}
-                  <span className="absolute -bottom-1 -right-1 bg-slate-900 border border-slate-800 text-[8px] font-mono font-bold w-4 h-4 rounded-full flex items-center justify-center text-slate-400">
+                  <span className="absolute -bottom-1 -right-1 bg-slate-900 border border-slate-800 text-[8px] font-mono font-bold w-4 h-4 rounded-full flex items-center justify-center text-white">
                     {step.id}
                   </span>
                 </div>
@@ -132,7 +132,7 @@ export default function TimelineSection({ onLogEvent }: TimelineProps) {
                 {/* Text summary */}
                 <div className="flex-1 min-w-0 pr-4">
                   <div className="flex items-center space-x-2">
-                    <h3 className={`text-sm font-semibold font-display ${isSelected ? 'text-white' : 'text-slate-300'}`}>
+                    <h3 className={`text-sm font-semibold font-display ${isSelected ? 'text-white' : 'text-slate-100'}`}>
                       {step.label}
                     </h3>
                     {isCompleted && (
@@ -146,7 +146,7 @@ export default function TimelineSection({ onLogEvent }: TimelineProps) {
                       </span>
                     )}
                   </div>
-                  <p className="text-xs text-slate-400 mt-1 leading-normal truncate">
+                  <p className="text-xs text-white mt-1 leading-normal truncate font-medium">
                     {step.description}
                   </p>
                 </div>
@@ -180,7 +180,7 @@ export default function TimelineSection({ onLogEvent }: TimelineProps) {
                   <span className="text-[9px] font-mono tracking-widest text-[#2563eb] font-bold uppercase p-1.5 bg-white/5 border border-white/5 rounded">
                     Phase 0{currentStepData.id} Info
                   </span>
-                  <span className="text-xs text-slate-500 font-mono">
+                  <span className="text-xs text-slate-200 font-mono font-semibold">
                     Milestone validation
                   </span>
                 </div>
@@ -189,24 +189,24 @@ export default function TimelineSection({ onLogEvent }: TimelineProps) {
                   Detailed Outlook — {currentStepData.label}
                 </h2>
 
-                <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                <p className="text-xs text-white leading-relaxed font-sans font-medium">
                   {currentStepData.detailedText}
                 </p>
 
                 <div className="border-t border-white/5 pt-4 space-y-2">
-                  <span className="text-[10px] font-mono uppercase text-slate-500 font-bold block">
+                  <span className="text-[10px] font-mono uppercase text-slate-200 font-bold block">
                     Actionable Task Indicators
                   </span>
                   
-                  <div className="flex items-center space-x-2.5 text-xs text-slate-300">
+                  <div className="flex items-center space-x-2.5 text-xs text-white font-semibold">
                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-400"></div>
                     <span>Canadian Driver Compatibility Matching</span>
                   </div>
-                  <div className="flex items-center space-x-2.5 text-xs text-slate-300">
+                  <div className="flex items-center space-x-2.5 text-xs text-white font-semibold">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#38bdf8]"></div>
                     <span>OBD-II Telemetry Calibration Drafts</span>
                   </div>
-                  <div className="flex items-center space-x-2.5 text-xs text-slate-300">
+                  <div className="flex items-center space-x-2.5 text-xs text-white font-semibold">
                     <div className="w-1.5 h-1.5 rounded-full bg-slate-700"></div>
                     <span>Physical Hardware Balance Allocator</span>
                   </div>
@@ -215,7 +215,7 @@ export default function TimelineSection({ onLogEvent }: TimelineProps) {
 
               <div className="bg-white/5 border border-white/5 p-4 rounded-xl flex items-start space-x-2.5 mt-auto">
                 <ShieldCheck className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
-                <div className="text-[10px] text-slate-400 leading-normal font-sans">
+                <div className="text-[10.5px] text-white leading-normal font-sans font-medium">
                   No automatic billing will occur. Your reservation is merely a priority queuing placeholder, and hardware conversion is 100% voluntary.
                 </div>
               </div>
