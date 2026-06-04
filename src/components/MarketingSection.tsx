@@ -77,7 +77,7 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="lg:col-span-4 rounded-2xl border border-astrateq-border/60 bg-[#070b12] p-6 lg:p-7 flex flex-col justify-between space-y-6"
+        className="lg:col-span-4 rounded-2xl border border-white/5 bg-astrateq-card p-6 lg:p-7 flex flex-col justify-between space-y-6"
         id="col-social-share"
       >
         <div className="space-y-4">
@@ -100,7 +100,7 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
           <div className="grid grid-cols-2 gap-2">
             <button 
               onClick={() => handleShareClick('x')}
-              className="flex items-center justify-center space-x-2 bg-astrateq-card hover:bg-slate-900 border border-astrateq-border hover:border-slate-700 p-2.5 rounded-lg text-xs font-semibold text-slate-200 transition-all hover:scale-[1.02]"
+              className="flex items-center justify-center space-x-2 bg-white/5 hover:bg-white/10 border border-white/5 p-2.5 rounded-lg text-xs font-semibold text-slate-200 transition-all hover:scale-[1.02]"
             >
               <Twitter className="w-3.5 h-3.5 text-astrateq-cyan" />
               <span>Share on X</span>
@@ -108,7 +108,7 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
 
             <button 
               onClick={() => handleShareClick('facebook')}
-              className="flex items-center justify-center space-x-2 bg-astrateq-card hover:bg-slate-900 border border-astrateq-border hover:border-slate-700 p-2.5 rounded-lg text-xs font-semibold text-slate-200 transition-all hover:scale-[1.02]"
+              className="flex items-center justify-center space-x-2 bg-white/5 hover:bg-white/10 border border-white/5 p-2.5 rounded-lg text-xs font-semibold text-slate-200 transition-all hover:scale-[1.02]"
             >
               <Facebook className="w-3.5 h-3.5 text-astrateq-blue" />
               <span>Facebook</span>
@@ -116,7 +116,7 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
 
             <button 
               onClick={handleCopyLink}
-              className="flex items-center justify-center space-x-2 bg-astrateq-card hover:bg-slate-900 border border-astrateq-border hover:border-slate-700 p-2.5 rounded-lg text-xs font-semibold text-slate-200 transition-all hover:scale-[1.02]"
+              className="flex items-center justify-center space-x-2 bg-white/5 hover:bg-white/10 border border-white/5 p-2.5 rounded-lg text-xs font-semibold text-slate-200 transition-all hover:scale-[1.02]"
             >
               {copiedLink ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Link2 className="w-3.5 h-3.5 text-slate-400" />}
               <span>{copiedLink ? 'Copied' : 'Copy Link'}</span>
@@ -124,7 +124,7 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
 
             <button 
               onClick={() => handleShareClick('instagram')}
-              className="flex items-center justify-center space-x-2 bg-astrateq-card hover:bg-slate-900 border border-astrateq-border hover:border-slate-700 p-2.5 rounded-lg text-xs font-semibold text-slate-200 transition-all hover:scale-[1.02]"
+              className="flex items-center justify-center space-x-2 bg-white/5 hover:bg-white/10 border border-white/5 p-2.5 rounded-lg text-xs font-semibold text-slate-200 transition-all hover:scale-[1.02]"
             >
               <Instagram className="w-3.5 h-3.5 text-rose-500" />
               <span>Visit IG</span>
@@ -132,7 +132,7 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
           </div>
 
           {/* Copy-Paste Quote Card */}
-          <div className="bg-[#0b101b] border border-astrateq-border/40 p-4 rounded-xl space-y-2 text-left relative overflow-hidden">
+          <div className="bg-white/5 border border-white/5 p-4 rounded-xl space-y-2 text-left relative overflow-hidden">
             <span className="text-[8.5px] font-mono uppercase text-slate-500 font-bold block">
               Suggested Copy
             </span>
@@ -141,9 +141,9 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
             </blockquote>
             <button 
               onClick={handleCopyQuote}
-              className="flex items-center justify-center w-full space-x-1.5 mt-2.5 text-[9px] font-mono uppercase font-bold text-slate-400 hover:text-white border border-dashed border-astrateq-border hover:border-slate-600 bg-slate-950 px-2.5 py-1.5 rounded-md transition-all"
+              className="flex items-center justify-center w-full space-x-1.5 mt-2.5 text-[9px] font-mono uppercase font-bold text-slate-400 hover:text-white border border-dashed border-white/10 hover:border-white/25 bg-black/40 px-2.5 py-1.5 rounded-md transition-all"
             >
-              {copiedQuote ? <Check className="w-3 h-3 text-emerald-400" /> : <Link2 className="w-3 h-3" />}
+              {copiedQuote ? <Check className="w-3. h-3 text-emerald-400" /> : <Link2 className="w-3 h-3" />}
               <span>{copiedQuote ? 'Copied Content' : 'Copy suggested copy'}</span>
             </button>
           </div>
@@ -156,7 +156,7 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
-        className="lg:col-span-4 rounded-2xl border border-astrateq-border/60 bg-[#070b12] p-6 lg:p-7 flex flex-col justify-between space-y-6"
+        className="lg:col-span-4 rounded-2xl border border-white/5 bg-astrateq-card p-6 lg:p-7 flex flex-col justify-between space-y-6"
         id="col-email-reminder"
       >
         <div className="space-y-4 flex-1 flex flex-col">
@@ -176,7 +176,7 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
           </p>
 
           {/* Envelope Graphic Animation Widget */}
-          <div className="relative border border-slate-800 bg-black/50 p-4 rounded-xl flex flex-col items-center justify-center space-y-3 h-40 overflow-hidden cursor-pointer mt-auto" onClick={handleResendEmail}>
+          <div className="relative border border-white/5 bg-black/50 p-4 rounded-xl flex flex-col items-center justify-center space-y-3 h-40 overflow-hidden cursor-pointer mt-auto" onClick={handleResendEmail}>
             <AnimatePresence mode="wait">
               {emailSending ? (
                 <motion.div 
@@ -253,7 +253,7 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.2 }}
-        className="lg:col-span-4 rounded-2xl border border-astrateq-cyan/20 bg-[#070b12] p-6 lg:p-7 flex flex-col justify-between space-y-6 shadow-[0_0_40px_rgba(34,211,238,0.03)] relative"
+        className="lg:col-span-4 rounded-2xl border border-astrateq-cyan/20 bg-astrateq-card p-6 lg:p-7 flex flex-col justify-between space-y-6 shadow-[0_0_40px_rgba(34,211,238,0.03)] relative"
         id="col-final-ctas"
       >
         {/* Cyan premium border overlay top */}
@@ -297,7 +297,7 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
           {/* Social Follow */}
           <button 
             onClick={() => handleFollowClick('X')}
-            className="w-full flex items-center justify-between border border-astrateq-border hover:border-white/20 bg-astrateq-card hover:bg-slate-900 text-xs font-semibold py-3 px-4 rounded-xl text-slate-300 hover:text-white transition-all group"
+            className="w-full flex items-center justify-between border border-white/5 bg-white/5 hover:bg-white/10 text-xs font-semibold py-3 px-4 rounded-xl text-slate-300 hover:text-white transition-all group"
             id="btn-cta-follow"
           >
             <span>Follow Astrateq Gadgets</span>
@@ -313,7 +313,7 @@ export default function MarketingSection({ customerEmail, reservationId, vehicle
                 onLogEvent('reservation_confirmed_view', { action: 'scroll_to_compatibility' });
               }
             }}
-            className="w-full flex items-center justify-between border border-astrateq-border hover:border-white/20 bg-astrateq-card hover:bg-slate-900 text-xs font-semibold py-3 px-4 rounded-xl text-slate-300 hover:text-white transition-all group"
+            className="w-full flex items-center justify-between border border-white/5 bg-white/5 hover:bg-white/10 text-xs font-semibold py-3 px-4 rounded-xl text-slate-300 hover:text-white transition-all group"
             id="btn-cta-review"
           >
             <span>Review Compatibility Details</span>

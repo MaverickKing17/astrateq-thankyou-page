@@ -72,7 +72,7 @@ export default function BenefitsSection() {
   return (
     <section className="py-6 px-4 md:px-8 max-w-7xl mx-auto w-full space-y-6" id="founder-benefits">
       <div>
-        <span className="text-[10px] uppercase font-mono tracking-widest text-[#2563eb] font-bold block">
+        <span className="text-[10px] uppercase font-mono tracking-widest text-astrateq-cyan font-bold block">
           FOUNDING SUITE
         </span>
         <h2 className="text-xl sm:text-2xl font-bold font-display text-white mt-0.5">
@@ -93,7 +93,7 @@ export default function BenefitsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.05 }}
             whileHover={{ y: -4, borderColor: 'rgba(34, 211, 238, 0.25)' }}
-            className="rounded-xl border border-astrateq-border/40 bg-[#070b12] p-5 flex flex-col justify-between space-y-4 hover:shadow-[0_0_20px_rgba(34,211,238,0.02)] transition-all h-full"
+            className="rounded-xl border border-white/5 bg-astrateq-card p-5 flex flex-col justify-between space-y-4 hover:shadow-[0_0_20px_rgba(34,211,238,0.02)] transition-all h-full"
             id={`benefit-${benefit.id}`}
           >
             <div className="space-y-3">
@@ -119,7 +119,7 @@ export default function BenefitsSection() {
               </p>
             </div>
 
-            <div className="border-t border-astrateq-border/20 pt-3 flex items-center justify-between">
+            <div className="border-t border-white/5 pt-3 flex items-center justify-between">
               <span className="text-[9px] font-mono text-slate-600 uppercase tracking-widest">
                 BENEFIT SECURED
               </span>

@@ -8,27 +8,33 @@
 
   --color-astrateq-cyan: #22d3ee;
   --color-astrateq-blue: #2563eb;
-  --color-astrateq-dark: #04070c;
-  --color-astrateq-card: #0a0f18;
-  --color-astrateq-border: #131d30;
+  --color-astrateq-dark: #05070A;
+  --color-astrateq-card: #0D1117;
+  --color-astrateq-border: #1F2937;
 }
 
 body {
   background-color: var(--color-astrateq-dark);
-  color: #f8fafc;
+  color: #ffffff;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
 
-/* Custom glow effects */
+::selection {
+  background-color: rgba(34, 211, 238, 0.3);
+  color: #ffffff;
+}
+
+/* Custom glow effects matching Apple / Tesla Preorder luxury */
 .hover-cyan-glow:hover {
-  box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.25);
 }
 
 .cyan-badge-glow {
-  box-shadow: 0 0 10px rgba(34, 211, 238, 0.15);
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.2);
 }
 
 .card-blur {
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
 }
+

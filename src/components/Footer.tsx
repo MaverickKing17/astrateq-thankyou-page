@@ -8,7 +8,7 @@ import { ShieldCheck } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-slate-950/60 border-t border-astrateq-border/40 py-10 px-4 md:px-8 mt-12" id="astrateq-footer">
+    <footer className="w-full bg-astrateq-dark/80 border-t border-white/5 py-10 px-4 md:px-8 mt-12 backdrop-blur-md" id="astrateq-footer">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         
         {/* Branding & description block */}
@@ -25,7 +25,7 @@ export default function Footer() {
               <path d="M2 12l10 5 10-5" />
             </svg>
             <span className="font-bold tracking-wider font-display uppercase text-white hover:text-white transition-all text-sm">
-              ASTRATEQ GADGETS
+              ASTRATEQ <span className="text-astrateq-cyan">GADGETS</span>
             </span>
           </div>
           <p className="text-[10px] uppercase font-mono tracking-widest text-[#64748b]">
@@ -46,7 +46,7 @@ export default function Footer() {
       </div>
 
       {/* Under-footer disclosure segment */}
-      <div className="max-w-7xl mx-auto border-t border-slate-900 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] text-slate-500 font-mono">
+      <div className="max-w-7xl mx-auto border-t border-white/5 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] text-slate-500 font-mono">
         <div className="flex items-center space-x-2 text-center sm:text-left">
           <ShieldCheck className="w-3.5 h-3.5 text-slate-600 flex-shrink-0" />
           <span>© 2026 Astrateq Gadgets Inc. All rights reserved. Registered Canadian validation entity.</span>

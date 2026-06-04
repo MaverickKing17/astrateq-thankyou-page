@@ -98,17 +98,17 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
 
   return (
     <section className="py-6 px-4 md:px-8 max-w-7xl mx-auto w-full" id="reservation-summary">
-      <div className="rounded-2xl border border-astrateq-border/60 bg-[#070b12] p-6 lg:p-8 space-y-6 relative overflow-hidden">
+      <div className="rounded-2xl border border-white/5 bg-astrateq-card p-6 lg:p-8 space-y-6 relative overflow-hidden">
         
         {/* Visual Ambient Grid background */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.02),transparent)] pointer-events-none"></div>
 
         {/* Header Section with Toggle Actions */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-astrateq-border/40 pb-5">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-white/5 pb-5">
           <div className="flex items-center space-x-3">
             <Sliders className="w-5 h-5 text-astrateq-cyan" />
             <div>
-              <span className="text-[10px] uppercase tracking-wider font-mono text-slate-500 font-bold block">
+              <span className="text-[10px] uppercase tracking-widest font-mono text-slate-500 font-bold block">
                 YOUR STATUS DETAILS
               </span>
               <h2 className="text-lg sm:text-xl font-bold font-display text-white">
@@ -121,7 +121,7 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
             {!isEditing ? (
               <button
                 onClick={() => setIsEditing(true)}
-                className="flex items-center space-x-1.5 text-xs text-slate-400 hover:text-white transition-all bg-astrateq-card hover:bg-slate-900 border border-astrateq-border px-3.5 py-1.5 rounded-lg group"
+                className="flex items-center space-x-1.5 text-xs text-slate-400 hover:text-white transition-all bg-white/5 hover:bg-white/10 border border-white/5 px-3.5 py-1.5 rounded-lg group"
                 id="btn-edit-reservation"
               >
                 <Edit2 className="w-3.5 h-3.5 group-hover:scale-105 transition-all text-astrateq-cyan" />
@@ -147,30 +147,30 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               onSubmit={handleSave}
-              className="bg-astrateq-card/60 p-5 rounded-xl border border-astrateq-border/30 grid grid-cols-1 md:grid-cols-12 gap-4 pb-6 overflow-hidden"
+              className="bg-black/45 p-5 rounded-xl border border-white/5 grid grid-cols-1 md:grid-cols-12 gap-4 pb-6 overflow-hidden"
               id="reservation-edit-form"
             >
-              <div className="md:col-span-12 flex flex-wrap gap-2 items-center justify-between pb-2 border-b border-astrateq-border/20">
+              <div className="md:col-span-12 flex flex-wrap gap-2 items-center justify-between pb-2 border-b border-white/5">
                 <span className="text-xs font-mono text-slate-400">Quick Sandbox Presets:</span>
                 <div className="flex gap-2">
                   <button 
                     type="button"
                     onClick={() => handleResetToPreset('tesla')}
-                    className="text-[10px] bg-slate-900 border border-slate-800 text-slate-300 hover:text-white px-2.5 py-1 rounded hover:border-astrateq-cyan/30 transition-all"
+                    className="text-[10px] bg-white/5 border border-white/5 text-slate-300 hover:text-white px-2.5 py-1 rounded hover:border-astrateq-cyan/30 transition-all"
                   >
                     Tesla Model Y
                   </button>
                   <button 
                     type="button"
                     onClick={() => handleResetToPreset('toyota')}
-                    className="text-[10px] bg-slate-900 border border-slate-800 text-slate-300 hover:text-white px-2.5 py-1 rounded hover:border-astrateq-cyan/30 transition-all"
+                    className="text-[10px] bg-white/5 border border-white/5 text-slate-300 hover:text-white px-2.5 py-1 rounded hover:border-astrateq-cyan/30 transition-all"
                   >
                     Toyota RAV4 Prime
                   </button>
                   <button 
                     type="button"
                     onClick={() => handleResetToPreset('ford')}
-                    className="text-[10px] bg-slate-900 border border-slate-800 text-slate-300 hover:text-white px-2.5 py-1 rounded hover:border-astrateq-cyan/30 transition-all"
+                    className="text-[10px] bg-white/5 border border-white/5 text-slate-300 hover:text-white px-2.5 py-1 rounded hover:border-astrateq-cyan/30 transition-all"
                   >
                     F-150 Lightning
                   </button>
@@ -178,60 +178,60 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
               </div>
 
               <div className="col-span-12 md:col-span-3">
-                <label className="block text-[10px] uppercase font-mono tracking-wider text-slate-400 mb-1.5 font-bold">Reservation ID</label>
+                <label className="block text-[10px] uppercase font-mono tracking-wider text-slate-500 mb-1.5 font-bold">Reservation ID</label>
                 <input 
                   type="text" 
                   value={resIdInput}
                   onChange={(e) => setResIdInput(e.target.value)}
-                  className="w-full text-xs bg-[#04070c] border border-astrateq-border text-white px-3 py-2.5 rounded-lg focus:outline-none focus:border-astrateq-cyan"
+                  className="w-full text-xs bg-black/40 border border-white/5 text-white px-3 py-2.5 rounded-lg focus:outline-none focus:border-astrateq-cyan"
                   placeholder="#AST-7X2K-9E84"
                   required
                 />
               </div>
 
               <div className="col-span-12 md:col-span-3">
-                <label className="block text-[10px] uppercase font-mono tracking-wider text-slate-400 mb-1.5 font-bold">Customer Email</label>
+                <label className="block text-[10px] uppercase font-mono tracking-wider text-slate-500 mb-1.5 font-bold">Customer Email</label>
                 <input 
                   type="email" 
                   value={emailInput}
                   onChange={(e) => setEmailInput(e.target.value)}
-                  className="w-full text-xs bg-[#04070c] border border-astrateq-border text-white px-3 py-2.5 rounded-lg focus:outline-none focus:border-astrateq-cyan"
+                  className="w-full text-xs bg-black/40 border border-white/5 text-white px-3 py-2.5 rounded-lg focus:outline-none focus:border-astrateq-cyan"
                   placeholder="name@example.com"
                   required
                 />
               </div>
 
               <div className="col-span-12 md:col-span-2">
-                <label className="block text-[10px] uppercase font-mono tracking-wider text-slate-400 mb-1.5 font-bold">Vehicle Year</label>
+                <label className="block text-[10px] uppercase font-mono tracking-wider text-slate-500 mb-1.5 font-bold">Vehicle Year</label>
                 <input 
                   type="text" 
                   value={yearInput}
                   onChange={(e) => setYearInput(e.target.value)}
-                  className="w-full text-xs bg-[#04070c] border border-astrateq-border text-white px-3 py-2.5 rounded-lg focus:outline-none focus:border-astrateq-cyan"
+                  className="w-full text-xs bg-black/40 border border-white/5 text-white px-3 py-2.5 rounded-lg focus:outline-none focus:border-astrateq-cyan"
                   placeholder="2023"
                   required
                 />
               </div>
 
               <div className="col-span-12 md:col-span-2">
-                <label className="block text-[10px] uppercase font-mono tracking-wider text-slate-400 mb-1.5 font-bold">Vehicle Make</label>
+                <label className="block text-[10px] uppercase font-mono tracking-wider text-slate-500 mb-1.5 font-bold">Vehicle Make</label>
                 <input 
                   type="text" 
                   value={makeInput}
                   onChange={(e) => setMakeInput(e.target.value)}
-                  className="w-full text-xs bg-[#04070c] border border-astrateq-border text-white px-3 py-2.5 rounded-lg focus:outline-none focus:border-astrateq-cyan"
+                  className="w-full text-xs bg-black/40 border border-white/5 text-white px-3 py-2.5 rounded-lg focus:outline-none focus:border-astrateq-cyan"
                   placeholder="Toyota"
                   required
                 />
               </div>
 
               <div className="col-span-12 md:col-span-2">
-                <label className="block text-[10px] uppercase font-mono tracking-wider text-slate-400 mb-1.5 font-bold">Vehicle Model</label>
+                <label className="block text-[10px] uppercase font-mono tracking-wider text-slate-500 mb-1.5 font-bold">Vehicle Model</label>
                 <input 
                   type="text" 
                   value={modelInput}
                   onChange={(e) => setModelInput(e.target.value)}
-                  className="w-full text-xs bg-[#04070c] border border-astrateq-border text-white px-3 py-2.5 rounded-lg focus:outline-none focus:border-astrateq-cyan"
+                  className="w-full text-xs bg-black/40 border border-white/5 text-white px-3 py-2.5 rounded-lg focus:outline-none focus:border-astrateq-cyan"
                   placeholder="RAV4 Hybrid"
                   required
                 />
@@ -262,7 +262,7 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
         <div className="grid grid-cols-1 sm:grid-cols-12 md:grid-cols-14 gap-y-6 gap-x-4">
           
           {/* Reservation ID */}
-          <div className="sm:col-span-6 md:col-span-3 border-r border-astrateq-border/10 pr-2 lg:pr-4 group flex flex-col justify-between h-full min-h-[50px]">
+          <div className="sm:col-span-6 md:col-span-3 border-r border-white/5 pr-2 lg:pr-4 group flex flex-col justify-between h-full min-h-[50px]">
             <span className="text-[10px] uppercase font-mono tracking-wider text-slate-500 font-bold block mb-1">
               Reservation ID
             </span>
@@ -272,7 +272,7 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
               </span>
               <button 
                 onClick={handleCopyId}
-                className="p-1.5 rounded-md hover:bg-slate-900 border border-transparent hover:border-astrateq-border text-slate-400 hover:text-astrateq-cyan transition-all"
+                className="p-1.5 rounded-md hover:bg-slate-900 border border-transparent hover:border-white/5 text-slate-400 hover:text-astrateq-cyan transition-all"
                 title="Copy Reservation ID"
               >
                 {copiedId ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
@@ -281,7 +281,7 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
           </div>
 
           {/* Customer Email */}
-          <div className="sm:col-span-6 md:col-span-3 border-r border-astrateq-border/10 pr-2 lg:pr-4 flex flex-col justify-between h-full min-h-[50px]">
+          <div className="sm:col-span-6 md:col-span-3 border-r border-white/5 pr-2 lg:pr-4 flex flex-col justify-between h-full min-h-[50px]">
             <span className="text-[10px] uppercase font-mono tracking-wider text-slate-500 font-bold block mb-1">
               Email Address
             </span>
@@ -291,7 +291,7 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
           </div>
 
           {/* Vehicle */}
-          <div className="sm:col-span-6 md:col-span-3 border-r border-astrateq-border/10 pr-2 lg:pr-4 flex flex-col justify-between h-full min-h-[50px]">
+          <div className="sm:col-span-6 md:col-span-3 border-r border-white/5 pr-2 lg:pr-4 flex flex-col justify-between h-full min-h-[50px]">
             <span className="text-[10px] uppercase font-mono tracking-wider text-slate-500 font-bold block mb-1">
               Vehicle Configured
             </span>
@@ -301,7 +301,7 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
           </div>
 
           {/* Region */}
-          <div className="sm:col-span-6 md:col-span-2 border-r border-astrateq-border/10 pr-2 lg:pr-4 relative flex flex-col justify-between h-full min-h-[50px]">
+          <div className="sm:col-span-6 md:col-span-2 border-r border-white/5 pr-2 lg:pr-4 relative flex flex-col justify-between h-full min-h-[50px]">
             <div className="flex items-center space-x-1 mb-1">
               <span className="text-[10px] uppercase font-mono tracking-wider text-slate-500 font-bold">
                 Canada Region
@@ -309,7 +309,7 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
               <button 
                 onMouseEnter={() => setShowRegionTooltip(true)}
                 onMouseLeave={() => setShowRegionTooltip(false)}
-                className="text-slate-600 hover:text-slate-400"
+                className="text-slate-600 hover:text-slate-400 font-mono"
               >
                 <BadgeInfo className="w-3 h-3" />
               </button>
@@ -328,7 +328,7 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
-                  className="absolute bottom-12 left-0 w-52 bg-slate-950 border border-astrateq-border/90 p-3 rounded-lg shadow-xl text-[10px] text-slate-300 font-mono leading-relaxed z-40 card-blur"
+                  className="absolute bottom-12 left-0 w-52 bg-slate-950 border border-white/5 p-3 rounded-lg shadow-xl text-[10px] text-slate-300 font-sans leading-relaxed z-40 card-blur"
                 >
                   Authorized Canadian Deployment. Built fully to withstand winter temperature cycles (-40°C).
                 </motion.div>
@@ -337,7 +337,7 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
           </div>
 
           {/* Release Batch */}
-          <div className="sm:col-span-6 md:col-span-2 border-r border-astrateq-border/10 pr-2 flex flex-col justify-between h-full min-h-[50px]">
+          <div className="sm:col-span-6 md:col-span-2 border-r border-white/5 pr-2 flex flex-col justify-between h-full min-h-[50px]">
             <span className="text-[10px] uppercase font-mono tracking-wider text-slate-500 font-bold block mb-1">
               Production Batch
             </span>
@@ -359,7 +359,7 @@ export default function SummaryCard({ details, onUpdateDetails, onLogEvent }: Su
         </div>
 
         {/* Global Security / Integrity Note */}
-        <div className="bg-[#0b101b] border border-astrateq-border/40 p-4 rounded-xl flex items-start space-x-3 mt-4">
+        <div className="bg-white/5 border border-white/5 p-4 rounded-xl flex items-start space-x-3 mt-4">
           <ShieldAlert className="w-4 h-4 text-astrateq-cyan flex-shrink-0 mt-0.5" />
           <div className="text-[11px] text-slate-400 leading-relaxed font-sans">
             <span className="text-white font-semibold">Zero Cloud Architecture Mandate:</span> All dashcam feeds, diagnostic signals, and cabin parameters generated by the <span className="text-astrateq-cyan font-semibold">Astrateq Edge Sentinel Bundle</span> are calculated instantly inside the on-board computer. No logs are ever shipped to servers. Total privacy securement.

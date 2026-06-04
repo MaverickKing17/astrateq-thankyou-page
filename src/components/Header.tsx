@@ -42,33 +42,30 @@ export default function Header({ onLogEvent }: HeaderProps) {
           </div>
         </div>
         <div className="flex flex-col">
-          <span className="text-lg font-bold tracking-wider font-display text-white uppercase sm:text-lg">
-            Astrateq
+          <span className="text-lg font-bold tracking-tight font-display text-white uppercase sm:text-lg">
+            ASTRATEQ <span className="text-astrateq-cyan">GADGETS</span>
           </span>
-          <span className="text-[10px] font-mono tracking-widest text-[#64748b] uppercase font-semibold leading-none">
-            Vehicle Intelligence
+          <span className="text-[9px] font-mono tracking-[0.15em] text-slate-500 uppercase font-semibold leading-none mt-0.5">
+            Drive Safer. Drive Smarter.
           </span>
         </div>
       </div>
 
       {/* Badges and Call to Action */}
-      <div className="flex items-center space-x-4">
-        <div className="flex items-center space-x-2 bg-astrateq-card border border-astrateq-border px-3.5 py-1.5 rounded-full cyan-badge-glow">
-          <span className="flex h-2.5 w-2.5 relative">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-astrateq-cyan opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-astrateq-cyan"></span>
-          </span>
-          <span className="text-xs font-semibold uppercase tracking-wider text-astrateq-cyan font-mono">
+      <div className="flex items-center space-x-6">
+        <div className="px-3 py-1.5 bg-astrateq-cyan/10 border border-astrateq-cyan/30 rounded-full flex items-center space-x-2 shadow-[0_0_12px_rgba(34,211,238,0.1)]">
+          <span className="w-2 h-2 bg-astrateq-cyan rounded-full animate-pulse shadow-[0_0_8px_#22d3ee]"></span>
+          <span className="text-[10px] font-bold uppercase tracking-widest text-astrateq-cyan font-mono">
             Priority Access Confirmed
           </span>
         </div>
 
         <button 
           onClick={handleBackHome}
-          className="flex items-center space-x-1.5 text-xs text-slate-400 hover:text-white font-medium border border-astrateq-border/80 hover:border-white/20 bg-astrateq-card px-4 py-2 rounded-lg transition-all duration-300 hover:bg-slate-900 group"
+          className="text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:text-white transition-opacity flex items-center space-x-1.5 focus:outline-none"
           id="btn-back-home"
         >
-          <ArrowLeft className="w-3.5 h-3.5 transition-transform duration-300 group-hover:-translate-x-0.5" />
+          <ArrowLeft className="w-3 h-3 text-astrateq-cyan" />
           <span>Back to Home</span>
         </button>
       </div>

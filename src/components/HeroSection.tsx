@@ -32,31 +32,32 @@ export default function HeroSection({ onLogEvent }: HeroProps) {
           Thank you
         </span>
         
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight font-display text-white leading-[1.1]">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tighter font-display text-white leading-[0.95]">
           Your Priority <br />
-          <span className="bg-gradient-to-r from-white via-slate-200 to-astrateq-cyan bg-clip-text text-transparent">
-            Reservation Is Secured.
-          </span>
+          <span className="text-astrateq-cyan">
+            Reservation
+          </span> <br />
+          Is Secured.
         </h1>
         
-        <p className="text-sm sm:text-base text-slate-400 font-sans max-w-xl leading-relaxed">
+        <p className="text-sm text-slate-400 font-sans max-w-[360px] leading-relaxed">
           Thank you for joining the first Astrateq Gadgets early access release. Your position has been recorded, and we'll keep you updated as we move toward product release.
         </p>
 
         {/* Premium Confirmation Alert Block */}
         <motion.div 
-          whileHover={{ scale: 1.02 }}
+          whileHover={{ scale: 1.01 }}
           transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-          className="flex items-start space-x-4 bg-emerald-950/20 border border-emerald-500/20 p-5 rounded-2xl shadow-[0_0_20px_rgba(16,185,129,0.03)] card-blur"
+          className="flex items-start space-x-4 bg-emerald-500/5 border border-emerald-500/10 p-5 rounded-2xl shadow-[0_0_20px_rgba(16,185,129,0.02)] card-blur"
         >
           <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 flex-shrink-0">
             <CheckCircle2 className="w-6 h-6 text-emerald-400 stroke-[2]" />
           </div>
           <div>
-            <h3 className="text-sm font-semibold tracking-wide text-emerald-400 uppercase font-display">
+            <h3 className="text-xs font-bold tracking-widest text-emerald-400 uppercase font-display">
               Reservation Confirmed
             </h3>
-            <p className="text-xs text-emerald-200/80 mt-1 leading-relaxed">
+            <p className="text-xs text-emerald-200/60 mt-1 leading-relaxed">
               You are officially on the priority access list. Your Hardware Balance Credit is ready.
             </p>
           </div>
@@ -70,15 +71,15 @@ export default function HeroSection({ onLogEvent }: HeroProps) {
         transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
         className="lg:col-span-6"
       >
-        <div className="relative group rounded-3xl bg-gradient-to-b from-astrateq-border/80 to-transparent p-[1.5px] shadow-[0_0_50px_rgba(34,211,238,0.05)] overflow-hidden transition-all duration-500 hover:shadow-[0_0_60px_rgba(34,211,238,0.1)]">
+        <div className="relative group rounded-3xl bg-gradient-to-b from-white/10 to-transparent p-[1px] shadow-[0_0_50px_rgba(34,211,238,0.03)] overflow-hidden transition-all duration-500 hover:shadow-[0_0_60px_rgba(34,211,238,0.08)]">
           {/* Cyan Glow Lines */}
           <div className="absolute top-0 right-1/4 w-32 h-[1px] bg-gradient-to-r from-transparent via-astrateq-cyan to-transparent"></div>
           <div className="absolute bottom-0 left-1/4 w-32 h-[1px] bg-gradient-to-r from-transparent via-astrateq-cyan/40 to-transparent"></div>
 
-          <div className="rounded-[23px] bg-[#070b12] p-6 sm:p-8 space-y-6">
+          <div className="rounded-[23px] bg-astrateq-card p-6 sm:p-8 space-y-6">
             
             {/* Card Header Info */}
-            <div className="flex items-center justify-between border-b border-astrateq-border/40 pb-4">
+            <div className="flex items-center justify-between border-b border-white/5 pb-4">
               <div>
                 <span className="text-[10px] uppercase tracking-wider font-mono text-slate-500 font-semibold">
                   ASTRATEQ
@@ -86,20 +87,20 @@ export default function HeroSection({ onLogEvent }: HeroProps) {
                 <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-white font-display">
                   Edge Sentinel
                 </h2>
-                <span className="text-xs text-astrateq-cyan font-semibold block mt-0.5 font-mono">
+                <span className="text-xs text-astrateq-cyan/80 font-semibold block mt-0.5 font-mono">
                   OBD-II + Dual Cam Bundle
                 </span>
               </div>
-              <div className="flex items-center space-x-1.5 bg-astrateq-cyan/10 border border-astrateq-cyan/20 rounded-lg px-2.5 py-1">
+              <div className="flex items-center space-x-1.5 bg-astrateq-cyan/10 border border-astrateq-cyan/20 rounded px-2 py-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-astrateq-cyan animate-pulse" />
                 <span className="text-[9px] font-mono tracking-wider font-bold text-astrateq-cyan uppercase">
-                  AES-256 Encrypted
+                  AES-256
                 </span>
               </div>
             </div>
 
             {/* Generated Image Asset frame */}
-            <div className="relative rounded-2xl border border-astrateq-border/50 bg-black/40 overflow-hidden group/img h-52 flex items-center justify-center">
+            <div className="relative rounded-2xl border border-white/5 bg-black/40 overflow-hidden group/img h-52 flex items-center justify-center">
               {/* Product render from path */}
               <img 
                 src={productImage} 
@@ -123,7 +124,7 @@ export default function HeroSection({ onLogEvent }: HeroProps) {
 
             {/* Tech pillars checkboxes */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-              <div className="bg-[#0b101b] border border-astrateq-border/30 rounded-xl p-3 flex flex-col items-center justify-center text-center transition-all duration-300 hover:border-astrateq-cyan/20">
+              <div className="bg-white/5 border border-white/5 rounded-xl p-3 flex flex-col items-center justify-center text-center transition-all duration-300 hover:border-astrateq-cyan/20">
                 <ShieldCheck className="w-4 h-4 text-astrateq-cyan mb-1.5" />
                 <span className="text-[9px] font-mono font-bold text-white uppercase tracking-wider">
                   100% Local
@@ -133,7 +134,7 @@ export default function HeroSection({ onLogEvent }: HeroProps) {
                 </span>
               </div>
 
-              <div className="bg-[#0b101b] border border-astrateq-border/30 rounded-xl p-3 flex flex-col items-center justify-center text-center transition-all duration-300 hover:border-astrateq-cyan/20">
+              <div className="bg-white/5 border border-white/5 rounded-xl p-3 flex flex-col items-center justify-center text-center transition-all duration-300 hover:border-astrateq-cyan/20">
                 <Cpu className="w-4 h-4 text-astrateq-cyan mb-1.5" />
                 <span className="text-[9px] font-mono font-bold text-white uppercase tracking-wider">
                   Edge Compute
@@ -143,7 +144,7 @@ export default function HeroSection({ onLogEvent }: HeroProps) {
                 </span>
               </div>
 
-              <div className="bg-[#0b101b] border border-astrateq-border/30 rounded-xl p-3 flex flex-col items-center justify-center text-center transition-all duration-300 hover:border-astrateq-cyan/20">
+              <div className="bg-white/5 border border-white/5 rounded-xl p-3 flex flex-col items-center justify-center text-center transition-all duration-300 hover:border-astrateq-cyan/20">
                 <HeartHandshake className="w-4 h-4 text-astrateq-cyan mb-1.5" />
                 <span className="text-[9px] font-mono font-bold text-white uppercase tracking-wider">
                   Privacy-First

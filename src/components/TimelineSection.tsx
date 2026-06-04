@@ -80,7 +80,7 @@ export default function TimelineSection({ onLogEvent }: TimelineProps) {
       {/* List Layout Panel */}
       <div className="lg:col-span-7 space-y-6">
         <div>
-          <span className="text-[10px] uppercase font-mono tracking-widest text-[#2563eb] font-bold block">
+          <span className="text-[10px] uppercase tracking-widest text-astrateq-cyan font-bold block">
             HOW IT WORKS
           </span>
           <h2 className="text-xl sm:text-2xl font-bold font-display text-white mt-0.5">
@@ -94,7 +94,7 @@ export default function TimelineSection({ onLogEvent }: TimelineProps) {
         {/* Vertical/Horizontal Timeline Component */}
         <div className="relative pl-1 md:pl-4 space-y-6">
           {/* Vertical connection line */}
-          <div className="absolute left-[21px] md:left-[33px] top-6 bottom-6 w-[2px] bg-gradient-to-b from-emerald-500 via-astrateq-cyan to-astrateq-border/40"></div>
+          <div className="absolute left-[21px] md:left-[33px] top-6 bottom-6 w-[2px] bg-gradient-to-b from-emerald-500 via-astrateq-cyan to-white/5"></div>
 
           {steps.map((step) => {
             const isSelected = activeStep === step.id;
@@ -107,8 +107,8 @@ export default function TimelineSection({ onLogEvent }: TimelineProps) {
                 onClick={() => handleStepClick(step.id)}
                 className={`relative flex items-start space-x-4 p-4 rounded-xl cursor-pointer transition-all border ${
                   isSelected 
-                    ? 'bg-[#0a0f18] border-astrateq-cyan/30 shadow-[0_0_20px_rgba(34,211,238,0.03)]' 
-                    : 'bg-transparent border-transparent hover:bg-slate-950/40 hover:border-astrateq-border/10'
+                    ? 'bg-astrateq-card border-white/10 shadow-[0_0_20px_rgba(34,211,238,0.03)]' 
+                    : 'bg-transparent border-transparent hover:bg-white/5'
                 }`}
                 whileHover={{ x: isSelected ? 0 : 4 }}
               >
@@ -119,7 +119,7 @@ export default function TimelineSection({ onLogEvent }: TimelineProps) {
                       ? 'bg-emerald-500/10 border-2 border-emerald-400/60 shadow-[0_0_10px_rgba(16,185,129,0.2)]'
                       : isActive
                         ? 'bg-astrateq-cyan/10 border-2 border-astrateq-cyan shadow-[0_0_15px_rgba(34,211,238,0.35)]'
-                        : 'bg-[#070b12] border border-astrateq-border'
+                        : 'bg-astrateq-card border border-white/10'
                   }`}>
                     {getStepIcon(step.id, step.status)}
                   </div>
@@ -169,14 +169,14 @@ export default function TimelineSection({ onLogEvent }: TimelineProps) {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.3 }}
-            className="h-full rounded-2xl border border-astrateq-border/50 bg-[#070b12] p-6 flex flex-col justify-between space-y-6 relative overflow-hidden"
+            className="h-full rounded-2xl border border-white/5 bg-astrateq-card p-6 flex flex-col justify-between space-y-6 relative overflow-hidden"
           >
             {/* Design detail accents */}
             <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-astrateq-cyan/5 via-transparent to-transparent pointer-events-none"></div>
 
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <span className="text-[9px] font-mono tracking-widest text-[#2563eb] font-bold uppercase p-1.5 bg-[#0b101b] border border-astrateq-cyan/10 rounded">
+                <span className="text-[9px] font-mono tracking-widest text-[#2563eb] font-bold uppercase p-1.5 bg-white/5 border border-white/5 rounded">
                   Phase 0{currentStepData.id} Info
                 </span>
                 <span className="text-xs text-slate-500 font-mono">
@@ -192,7 +192,7 @@ export default function TimelineSection({ onLogEvent }: TimelineProps) {
                 {currentStepData.detailedText}
               </p>
 
-              <div className="border-t border-astrateq-border/40 pt-4 space-y-2">
+              <div className="border-t border-white/5 pt-4 space-y-2">
                 <span className="text-[10px] font-mono uppercase text-slate-500 font-bold block">
                   Actionable Task Indicators
                 </span>
@@ -212,7 +212,7 @@ export default function TimelineSection({ onLogEvent }: TimelineProps) {
               </div>
             </div>
 
-            <div className="bg-[#0b101b] border border-slate-800 p-4 rounded-xl flex items-start space-x-2.5 mt-auto">
+            <div className="bg-white/5 border border-white/5 p-4 rounded-xl flex items-start space-x-2.5 mt-auto">
               <ShieldCheck className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
               <div className="text-[10px] text-slate-400 leading-normal font-sans">
                 No automatic billing will occur. Your reservation is merely a priority queuing placeholder, and hardware conversion is 100% voluntary.
