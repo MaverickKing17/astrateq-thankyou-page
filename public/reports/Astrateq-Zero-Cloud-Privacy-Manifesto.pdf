@@ -1,0 +1,97 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<<
+  /Type /Catalog
+  /Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+  /Type /Pages
+  /Kids [3 0 R]
+  /Count 1
+>>
+endobj
+
+3 0 obj
+<<
+  /Type /Page
+  /Parent 2 0 R
+  /MediaBox [0 0 595 842]
+  /Resources <<
+    /Font <<
+      /F1 4 0 R
+    >>
+  >>
+  /Contents 5 0 R
+>>
+endobj
+
+4 0 obj
+<<
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica-Bold
+>>
+endobj
+
+5 0 obj
+<< /Length 500 >>
+stream
+BT
+/F1 22 Tf
+50 780 Td
+(ASTRATEQ ZERO-CLOUD PRIVACY MANIFESTO) Tj
+/F1 12 Tf
+0 -30 Td
+(A New Standard for Vehicle Intelligence Ownership - reports.astrateqgadgets.com) Tj
+0 -40 Td
+(Our Decentralized Edge Computing Safety Paradigm Statement) Tj
+0 -30 Td
+(Privacy Classification: PIPEDA & Quebec Law 25 Compliant) Tj
+0 -20 Td
+(Telemetry Blueprint: Absolute Ephemeral Memory Isolation) Tj
+0 -20 Td
+(Cryptographic Protocol: Local Offline Verification Only) Tj
+0 -40 Td
+(Vehicular automation and intelligent computer vision should never result in persistent) Tj
+0 -15 Td
+(corporate surveillance. At Astrateq Gadgets, we build systems under a strict mandate:) Tj
+0 -15 Td
+(all data, including sensor grids, OBD metrics, GPS vectors, and lane-prediction) Tj
+0 -15 Td
+(inference weights, MUST stay resident on-device inside your physical car boundary.) Tj
+0 -35 Td
+(Core Technical Directives:) Tj
+0 -20 Td
+(  - On-Device Transformer Weights: Zero external API calls during active operation) Tj
+0 -15 Td
+(  - Pedestrian & Plate Obfuscation: Local hardware-layer blurring) Tj
+0 -15 Td
+(  - Decoupled Networks: Wireless diagnostic chips can be physically disconnected) Tj
+0 -40 Td
+(Published by Astrateq Gadgets Engineering Labs, Montreal, QC.) Tj
+0 -15 Td
+(Legal & Compliance Council Dispatch: support@astrateqgadgets.ca) Tj
+ET
+endstream
+endobj
+
+xref
+0 6
+0000000000 65535 f
+0000000015 00000 n
+0000000068 00000 n
+0000000122 00000 n
+0000000277 00000 n
+0000000350 00000 n
+trailer
+<<
+  /Size 6
+  /Root 1 0 R
+>>
+startxref
+915
+%%EOF
