@@ -5,8 +5,13 @@
 
 import React from 'react';
 import { ShieldCheck } from 'lucide-react';
+import { PolicyTab } from './InfoHubModal';
 
-export default function Footer() {
+interface FooterProps {
+  onOpenInfoHub: (tab: PolicyTab) => void;
+}
+
+export default function Footer({ onOpenInfoHub }: FooterProps) {
   return (
     <footer className="w-full bg-astrateq-dark/80 border-t border-white/5 py-10 px-4 md:px-8 mt-12 backdrop-blur-md" id="astrateq-footer">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
@@ -36,10 +41,10 @@ export default function Footer() {
 
         {/* Links stack */}
         <div className="flex flex-wrap gap-x-8 gap-y-3 text-xs text-slate-400 font-medium">
-          <a href="#privacy" onClick={(e) => { e.preventDefault(); alert('Simulating Privacy Shield policy display.'); }} className="hover:text-white transition-all">Privacy Policy</a>
-          <a href="#terms" onClick={(e) => { e.preventDefault(); alert('Simulating Terms & Conditions agreement page.'); }} className="hover:text-white transition-all">Terms of Service</a>
-          <a href="#contact" onClick={(e) => { e.preventDefault(); alert('Simulating contact portal: support@astrateqgadgets.com'); }} className="hover:text-white transition-all">Contact Us</a>
-          <a href="#faq" onClick={(e) => { e.preventDefault(); alert('Simulating localized FAQ knowledge library.'); }} className="hover:text-white transition-all">FAQ / Troubleshooting</a>
+          <button onClick={() => onOpenInfoHub('privacy')} className="hover:text-white transition-all focus:outline-none cursor-pointer">Privacy Policy</button>
+          <button onClick={() => onOpenInfoHub('terms')} className="hover:text-white transition-all focus:outline-none cursor-pointer">Terms of Service</button>
+          <button onClick={() => onOpenInfoHub('contact')} className="hover:text-white transition-all focus:outline-none cursor-pointer">Contact Us</button>
+          <button onClick={() => onOpenInfoHub('faq')} className="hover:text-white transition-all focus:outline-none cursor-pointer">FAQ / Troubleshooting</button>
         </div>
       </div>
 

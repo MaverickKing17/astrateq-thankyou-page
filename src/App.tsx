@@ -13,6 +13,7 @@ import BenefitsSection from './components/BenefitsSection';
 import MarketingSection from './components/MarketingSection';
 import AnalyticsObserver from './components/AnalyticsObserver';
 import Footer from './components/Footer';
+import InfoHubModal, { PolicyTab } from './components/InfoHubModal';
 
 export default function App() {
   // Main priority customer state
@@ -30,6 +31,16 @@ export default function App() {
 
   // Captured analytics list tracker
   const [events, setEvents] = useState<AnalyticsEvent[]>([]);
+
+  // Info Hub Modal state for Canadian AI-powered policy pages
+  const [isInfoHubOpen, setIsInfoHubOpen] = useState(false);
+  const [infoHubTab, setInfoHubTab] = useState<PolicyTab>('privacy');
+
+  const handleOpenInfoHub = (tab: PolicyTab) => {
+    setInfoHubTab(tab);
+    setIsInfoHubOpen(true);
+    logEvent('info_hub_view', { action: 'open_modal', source: `footer_link_${tab}` });
+  };
 
   // Telemetry logger callback
   const logEvent = (eventName: string, parameters: Record<string, string | number | boolean>) => {
@@ -147,7 +158,15 @@ export default function App() {
       </main>
 
       {/* 9. Footing links & global credentials */}
-      <Footer />
+      <Footer onOpenInfoHub={handleOpenInfoHub} />
+
+      {/* Info Hub Overlay Modal */}
+      <InfoHubModal
+        isOpen={isInfoHubOpen}
+        initialTab={infoHubTab}
+        onClose={() => setIsInfoHubOpen(false)}
+        onLogEvent={logEvent}
+      />
     </div>
   );
 }
