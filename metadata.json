@@ -1,0 +1,6 @@
+{
+  "name": "Astrateq Gadgets Priority Access",
+  "description": "Premium priority access validation and thank-you confirmation portal for Astrateq Edge Sentinel.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
