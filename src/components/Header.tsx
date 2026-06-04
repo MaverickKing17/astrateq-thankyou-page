@@ -26,20 +26,14 @@ export default function Header({ onLogEvent }: HeaderProps) {
       id="astrateq-header"
     >
       {/* Brand Logo & Wordmark */}
-      <div className="flex items-center space-x-2.5 mb-4 sm:mb-0 cursor-pointer group" onClick={handleBackHome}>
-        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-astrateq-cyan via-astrateq-blue to-black p-[1px] flex items-center justify-center shadow-[0_0_15px_rgba(34,211,238,0.25)] transition-all duration-300 group-hover:scale-105">
-          <div className="w-full h-full bg-astrateq-dark rounded-[7px] flex items-center justify-center">
-            <svg 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              className="w-5 h-5 text-astrateq-cyan stroke-[2.5]"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5z" />
-              <path d="M2 17l10 5 10-5" />
-              <path d="M2 12l10 5 10-5" />
-            </svg>
-          </div>
+      <div className="flex items-center space-x-3 mb-4 sm:mb-0 cursor-pointer group" onClick={handleBackHome}>
+        <div className="w-10 h-10 rounded-xl overflow-hidden border border-white/15 bg-black/40 shadow-[0_0_12px_rgba(34,211,238,0.15)] transition-all duration-300 group-hover:scale-105 group-hover:border-astrateq-cyan/40">
+          <img 
+            src="https://i.ibb.co/4g7ffGv4/Gemini-Generated-Image-pta8i9pta8i9pta8.png" 
+            alt="Astrateq Logo" 
+            referrerPolicy="no-referrer"
+            className="w-full h-full object-cover"
+          />
         </div>
         <div className="flex flex-col">
           <span className="text-lg font-bold tracking-tight font-display text-white uppercase sm:text-lg">

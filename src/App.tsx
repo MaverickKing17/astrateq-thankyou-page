@@ -77,10 +77,28 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-astrateq-dark text-slate-100 overflow-x-hidden relative font-sans">
+    <div className="min-h-screen flex flex-col justify-between bg-[#080b16] text-slate-100 overflow-x-hidden relative font-sans">
       
-      {/* Background visual light leak */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.06)_0%,rgba(34,211,238,0.02)_50%,transparent_100%)] pointer-events-none -z-10"></div>
+      {/* Background visual light leak and colorful glowing energy spheres */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+        {/* Deep navy backplate */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0d1a] via-[#0e1426] to-[#060810]"></div>
+        
+        {/* Soft cyan gradient aura glowing from top-left */}
+        <div className="absolute top-0 left-[-10%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(34,211,238,0.08)_0%,transparent_70%)] blur-3xl opacity-90 animate-pulse" style={{ animationDuration: '8s' }}></div>
+        
+        {/* Glowing royal blue energetic bubble in center right */}
+        <div className="absolute top-[25%] right-[-5%] w-[700px] h-[700px] bg-[radial-gradient(circle,rgba(37,99,235,0.07)_0%,transparent_70%)] blur-3xl opacity-80"></div>
+        
+        {/* Gentle supportive emerald aura blooming in bottom left to balance confirmation message */}
+        <div className="absolute bottom-[20%] left-[5%] w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(16,185,129,0.04)_0%,transparent_70%)] blur-3xl opacity-75"></div>
+        
+        {/* Top-center premium visual beam */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1400px] h-[850px] bg-[radial-gradient(ellipse_at_top,rgba(34,211,238,0.07)_0%,rgba(37,99,235,0.04)_30%,rgba(16,185,129,0.03)_65%,transparent_100%)]"></div>
+        
+        {/* Tech line grid overlay with subtle opacity */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.007)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.007)_1px,transparent_1px)] bg-[size:40px_40px] opacity-40"></div>
+      </div>
       
       {/* 1. Header */}
       <Header onLogEvent={logEvent} />
